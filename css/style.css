@@ -5,11 +5,17 @@
 /* Les petits plats - Logo*/
 
 header {
-    position: absolute;
-    width: 268px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     height: 93px;
-    left: 588px;
-    top: 42px;
+    margin-top : 42px;
+    font-family:'DM Sans', Courier, monospace;
+}
+
+form {
+    width: 100%;
 }
 
 /* font-family: 'DM Sans';
