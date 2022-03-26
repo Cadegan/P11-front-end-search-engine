@@ -1,0 +1,13 @@
+form {
+    width: 100%;
+}
+
+.collapse :not(.show) {
+    display: none;
+}
+
+.collapsing {
+    height: 0;
+    overflow: hidden;
+    /* transition : transition-collapse; */
+}

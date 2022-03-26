@@ -1,0 +1,22 @@
+{
+  "name": "p11-front-end-search-engine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+     "sass": "sass --watch ./scss/main.scss:./css/style.css --style expanded"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cadegan/P11-front-end-search-engine.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cadegan/P11-front-end-search-engine/issues"
+  },
+  "homepage": "https://github.com/Cadegan/P11-front-end-search-engine#readme",
+  "dependencies": {
+    "sass": "^1.49.9"
+  }
+}
