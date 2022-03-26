@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-     "sass": "sass --watch ./scss/main.scss:./css/style.css --style expanded"
+    "sass": "sass --watch ./scss/main.scss:./css/style.css --style expanded"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Cadegan/P11-front-end-search-engine#readme",
   "dependencies": {
+    "bootstrap": "^5.1.3",
     "sass": "^1.49.9"
   }
 }
