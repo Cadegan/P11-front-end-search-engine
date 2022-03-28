@@ -1,3 +1,27 @@
 form {
     width: 100%;
 }
+
+.panel-group {
+    display: flex;
+}
+
+#btnIngredients {
+    background: $blue;
+}
+
+#btnAppareils {
+    background: $green;
+}
+
+#btnUstensiles {
+    background: $orange;
+}
+
+.panel-title > button {
+    color: white;
+}
+
+.panel-title > button:hover {
+    color: whitesmoke;
+}

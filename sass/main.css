@@ -20,4 +20,28 @@ header p {
 
 form {
   width: 100%;
+}
+
+.panel-group {
+  display: flex;
+}
+
+#btnIngredients {
+  background: #3282F7;
+}
+
+#btnAppareils {
+  background: #68D9A4;
+}
+
+#btnUstensiles {
+  background: #D04F4F;
+}
+
+.panel-title > button {
+  color: white;
+}
+
+.panel-title > button:hover {
+  color: whitesmoke;
 }/*# sourceMappingURL=main.css.map */
