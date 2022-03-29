@@ -1,16 +1,9 @@
-import { recipes } from '../data/recipes';
+import recipes from '../data/recipes';
+import RecipeData from '../factories/models/recipeData';
+import RecipeTemplate from '../factories/templates/recipeTemplate';
 
 const galleryContainer = document.querySelector('.gallery-container');
 const gallery = [];
-
-// async function init () {
-//     await fetch("/data/recipes.json")
-//         .then(res => res.json())
-//         .then((data) => {
-//             recipes = data.recipes.find(id)
-//         })
-
-// }
 
 function showGallery(recipes) {
   recipes.forEach((recipe) => {
@@ -28,3 +21,9 @@ const recipesDisplay = () => {
   });
   showGallery(gallery);
 };
+
+async function init() {
+  recipesDisplay();
+}
+
+init();

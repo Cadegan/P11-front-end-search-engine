@@ -1,14 +1,14 @@
 /* eslint-disable no-underscore-dangle */
 export default class RecipeData {
-  constructor(recipes) {
-    this._id = recipes.id;
-    this._name = recipes.name;
-    this._servings = recipes.servings;
-    this._ingredients = recipes.ingredients;
-    this._time = recipes.time;
-    this._description = recipes.description;
-    this._appliance = recipes.appliance;
-    this.ustensils = recipes.ustensils;
+  constructor(recipe) {
+    this._id = recipe.id;
+    this._name = recipe.name;
+    this._servings = recipe.servings;
+    this._ingredients = recipe.ingredients;
+    this._time = recipe.time;
+    this._description = recipe.description;
+    this._appliance = recipe.appliance;
+    this.ustensils = recipe.ustensils;
   }
 
   get id() { return this._id; }
