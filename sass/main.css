@@ -29,13 +29,22 @@ form {
 #btnIngredients {
   background: #3282F7;
 }
+#btnIngredients:hover {
+  background-color: #2d72db;
+}
 
 #btnAppareils {
   background: #68D9A4;
 }
+#btnAppareils:hover {
+  background-color: #5dc193;
+}
 
 #btnUstensiles {
   background: #D04F4F;
+}
+#btnUstensiles:hover {
+  background-color: #bb4747;
 }
 
 .panel-title > button {

@@ -8,20 +8,32 @@ form {
 
 #btnIngredients {
     background: $blue;
+
+    &:hover {
+        background-color: $blueHover;
+    }
 }
 
 #btnAppareils {
     background: $green;
+
+    &:hover {
+        background-color: $greenHover;
+    }
 }
 
 #btnUstensiles {
     background: $orange;
+
+    &:hover {
+        background-color: $orangeHover;
+    }
 }
 
-.panel-title > button {
+.panel-title>button {
     color: white;
 }
 
-.panel-title > button:hover {
+.panel-title>button:hover {
     color: whitesmoke;
 }
