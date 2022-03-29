@@ -1,6 +1,7 @@
-import {recipes} from '../data/recipes.js';
-const galleryContainer = document.querySelector(".gallery-container")
-const gallery = []
+import { recipes } from '../data/recipes';
+
+const galleryContainer = document.querySelector('.gallery-container');
+const gallery = [];
 
 // async function init () {
 //     await fetch("/data/recipes.json")
@@ -11,19 +12,19 @@ const gallery = []
 
 // }
 
-const recipesDisplay = () => {
-    galleryContainer.innerHTML = ""
-    recipes.forEach((recipe) => {
-        gallery.push(recipe)
-    })
-    showGallery(gallery)
-}
-
 function showGallery(recipes) {
-    recipes.forEach((recipe) => {
-        const recipeData = new RecipeData(recipe)
-        const recipeTemplate = new RecipeTemplate(recipeData)
+  recipes.forEach((recipe) => {
+    const recipeData = new RecipeData(recipe);
+    const recipeTemplate = new RecipeTemplate(recipeData);
 
-        galleryContainer.innerHTML += recipeTemplate
-    })
+    galleryContainer.innerHTML += recipeTemplate;
+  });
 }
+
+const recipesDisplay = () => {
+  galleryContainer.innerHTML = '';
+  recipes.forEach((recipe) => {
+    gallery.push(recipe);
+  });
+  showGallery(gallery);
+};
