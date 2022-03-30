@@ -8,7 +8,7 @@ export default class RecipeData {
     this._time = recipe.time;
     this._description = recipe.description;
     this._appliance = recipe.appliance;
-    this.ustensils = recipe.ustensils;
+    this._ustensils = recipe.ustensils;
   }
 
   get id() { return this._id; }

@@ -1,12 +1,16 @@
-import { recipes } from '../data/recipes';
-import RecipeData from '../factories/models/recipeData';
-import RecipeTemplate from '../factories/templates/recipeTemplate';
+import { recipes } from "../data/recipes.js";
+import RecipeData from "../factories/models/recipeData.js";
+import RecipeTemplate from "../factories/templates/recipeTemplate.js";
 
-const galleryContainer = document.querySelector('.gallery-container');
+const recipesArray = Object.entries(recipes);
+// console.log(recipesArray);
+// console.log(recipes)
+
+const galleryContainer = document.querySelector(".gallery-container");
 const gallery = [];
 
 function showGallery() {
-  recipes.forEach((recipe) => {
+  recipesArray.forEach((recipe) => {
     const recipeData = new RecipeData(recipe);
     const recipeTemplate = new RecipeTemplate(recipeData);
     // galleryContainer.appendChild(recipeTemplate);
@@ -15,8 +19,8 @@ function showGallery() {
 }
 
 const recipesDisplay = () => {
-  galleryContainer.innerHTML = '';
-  recipes.forEach((recipe) => {
+  galleryContainer.innerHTML = "";
+  recipesArray.forEach((recipe) => {
     gallery.push(recipe);
   });
   showGallery(gallery);
