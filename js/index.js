@@ -1,9 +1,10 @@
-import { recipes } from '../data/recipes.js';
-import RecipeData from '../factories/models/recipeData.js';
-import RecipeTemplate from '../factories/templates/recipeTemplate.js';
+/* eslint-disable import/extensions */
+import RecipeTemplate from "../factories/templates/recipeTemplate.js";
+// import { recipes } from "../data/recipes.js";
+// import RecipeData from "../factories/models/recipeData.js";
 
 async function init() {
-  let data = await fetch(recipes);
+  let data = await fetch("./data/recipes.json");
   data = await data.json;
   window.recipeCards = new RecipeTemplate(data);
 }
