@@ -1,13 +1,14 @@
 /* eslint-disable import/extensions */
 import RecipeTemplate from "../factories/templates/recipeTemplate.js";
-// import { recipes } from "../data/recipes.js";
 // import RecipeData from "../factories/models/recipeData.js";
 
 async function init() {
-  let data = await fetch("./data/recipes.json");
-  data = await data.json;
+  let data = await fetch("../data/recipes.json");
+  data = await data.json();
   window.recipeCards = new RecipeTemplate(data);
 }
+
+init();
 
 // const galleryContainer = document.querySelector('.gallery-container');
 // const gallery = [];
@@ -33,4 +34,3 @@ async function init() {
 //   recipesDisplay();
 // }
 
-init();
