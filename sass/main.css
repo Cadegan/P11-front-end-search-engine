@@ -26,6 +26,30 @@ form {
   display: flex;
 }
 
+.containerFilter {
+  margin-left: 8px;
+  margin-right: 16px;
+  padding: 0px;
+}
+
+.container-fluid {
+  padding: 0px;
+}
+
+.tagSection {
+  margin-left: 16px;
+}
+
+.panel-collapse {
+  padding-left: 8px;
+}
+
+.btn-lg {
+  width: 170px;
+  height: 69px;
+  border-radius: 5px;
+}
+
 #btnIngredients {
   background: #3282F7;
 }
@@ -49,8 +73,25 @@ form {
 
 .panel-title > button {
   color: white;
+  font-size: 18px;
+  line-height: 21.6px;
 }
 
 .panel-title > button:hover {
   color: whitesmoke;
+}
+
+.listRecipesSection {
+  margin-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.card-img-top {
+  background-color: #C7BEBE;
+  height: 178px;
+}
+
+.recipeCard {
+  margin-bottom: 30px;
 }/*# sourceMappingURL=main.css.map */

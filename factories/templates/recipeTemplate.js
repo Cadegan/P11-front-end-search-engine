@@ -14,8 +14,8 @@ export default class RecipeTemplate {
     for (let i = 0; i < this.recipes.length; i++) {
       recipeCard += `
         <article class="recipeCard col-12 col-lg-4">
-          <div class="card mb-4 mb-lg-0 border-light shadow-sm">
-            <img src="" alt="Recipe picture" >
+          <div class="card mb-4 mb-lg-0 border-light">
+            <img src="" class="card-img-top" alt="Recipe picture" >
               <div class="recipeHeading">
                 <h5 class="recipeTitel">${this.recipes[i].name}</p>
                 <img src="" alt="Clock logo">

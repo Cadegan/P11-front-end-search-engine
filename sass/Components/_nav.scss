@@ -6,6 +6,30 @@ form {
     display: flex;
 }
 
+.containerFilter {
+    margin-left: 8px;
+    margin-right: 16px;
+    padding: 0px;
+}
+
+.container-fluid {
+    padding: 0px;
+}
+
+.tagSection {
+    margin-left: 16px;
+}
+
+.panel-collapse {
+    padding-left: 8px;
+}
+
+.btn-lg {
+    width: 170px;
+    height: 69px;
+    border-radius: 5px;
+}
+
 #btnIngredients {
     background: $blue;
 
@@ -32,6 +56,8 @@ form {
 
 .panel-title>button {
     color: white;
+    font-size: 18px;
+    line-height: 21.6px;
 }
 
 .panel-title>button:hover {
