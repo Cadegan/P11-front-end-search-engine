@@ -15,19 +15,20 @@ export default class RecipeTemplate {
       recipeCard += `
         <article class="recipeCard col-12 col-lg-4">
           <div class="card mb-4 mb-lg-0 border-light">
-            <img src="" class="card-img-top" alt="Recipe picture" >
-              <div class="recipeHeading">
-                <h5 class="recipeTitel">${this.recipes[i].name}</h5>
-                  <div class="cookingTime">
-                  <img src="img/clock.svg" alt="Clock logo">
-                  <p class="timer">${this.recipes[i].time} min</p>
-                  </div>
+            <img src="" class="card-img-top" alt="Recipe picture">
+            <div class="recipeHeading">
+              <h5 class="recipeTitel">${this.recipes[i].name}</h5>
+              <div class="cookingTime">
+                <img src="img/clock.svg" alt="Clock logo">
+                <p class="timer">${this.recipes[i].time} min</p>
               </div>
+            </div>
+            <div class="mainRecipeBody">
               <div class="recipeBody">
                 <div class="allNeedCook">${this.allNeedCook(i)}</div>
                 <div class="explanationRecipe">${this.recipes[i].description}</div>
               </div>
-          </div>
+            </div>
         </article>
         `;
     }
