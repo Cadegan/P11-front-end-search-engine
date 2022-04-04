@@ -31,4 +31,14 @@ export default class RecipeTemplate {
     }
     return recipeCard;
   }
+
+  allNeedCook() {
+    let text = "";
+    let ingredient;
+    let quantity;
+    let unit;
+    for (let j = 0; j < this.recipes[i].ingredients.length; j++) {
+
+    }
+  }
 }
