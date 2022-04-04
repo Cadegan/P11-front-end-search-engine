@@ -33,19 +33,19 @@
   </nav>
   <section class="tagSection">
     <div>
-      TagFilter
+      TagSection
     </div>
   </section>
 
-  <section class="filterSection" >
+  <section class="filterSection">
     <div class="container containerFilter">
       <div class="panel-group" id="accordion">
-        <div class="panel panel-default">
-          <div class="panel-heading d-inline-flex p-2">
-            <h4 class="panel-title">
-              <button type="button" id="btnIngredients" class="btn btn-lg collapsed" data-toggle="collapse"
-                data-parent="#accordion" href="#collapse1">Ingredients</button>
-            </h4>
+
+        <div class="filterIngredient">
+          <div class="btFilterIngredient btn btn-lg panel-title">
+            <input class="form-control search-input searchInputIngredients" placeholder="Ingrédients"></input>
+            <button type="button" class="collapsed btnFleche" data-toggle="collapse"
+              data-parent="#accordion" href="#collapse1">^</button>
           </div>
           <div id="collapse1" class="panel-collapse collapse">
             <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -53,12 +53,12 @@
               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
           </div>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading d-inline-flex p-2">
-            <h4 class="panel-title">
-              <button type="button" id="btnAppareils" class="btn btn-lg collapsed" data-toggle="collapse"
-                data-parent="#accordion" href="#collapse2">Appareils</button>
-            </h4>
+
+        <div class="filterAppareils">
+          <div class="btFilterAppareils btn btn-lg panel-title">
+            <input class="form-control search-input searchInputIngredients" placeholder="Appareils"></input>
+            <button type="button" class="collapsed btnFleche" data-toggle="collapse" data-parent="#accordion"
+              href="#collapse2">^</button>
           </div>
           <div id="collapse2" class="panel-collapse collapse">
             <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -66,7 +66,22 @@
               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
           </div>
         </div>
-        <div class="panel panel-default">
+
+        <div class="filterUstensiles">
+          <div class="btnFilterUstensiles btn btn-lg panel-title">
+            <input class="form-control search-input searchInputIngredients" placeholder="Ustensiles"></input>
+            <button type="button" class="collapsed btnFleche" data-toggle="collapse" data-parent="#accordion"
+              href="#collapse3">^</button>
+          </div>
+          <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+        </div>
+
+
+        <!-- <div class="panel panel-default">
           <div class="panel-heading d-inline-flex p-2">
             <h4 class="panel-title">
               <button type="button" id="btnUstensiles" class="btn btn-lg collapsed" data-toggle="collapse"
@@ -78,7 +93,8 @@
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
           </div>
-        </div>
+        </div> -->
+
       </div>
     </div>
   </section>

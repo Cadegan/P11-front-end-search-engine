@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+* {
+  font-family: "Lato";
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -8,9 +12,9 @@ header {
   width: 100%;
   height: 93px;
   margin-top: 42px;
-  font-family: "DM Sans", Courier, monospace;
 }
 header p {
+  font-family: "DM Sans", Courier, monospace;
   font-weight: bold;
   font-size: 36px;
   text-align: center;
@@ -44,31 +48,98 @@ form {
   padding-left: 8px;
 }
 
-.btn-lg {
-  width: 170px;
-  height: 69px;
-  border-radius: 5px;
+.panel-group input {
+  background: transparent;
+  border: none;
+  height: 100%;
+  color: white;
+}
+.panel-group input::-moz-placeholder {
+  color: white;
+  opacity: 80%;
+  /* Firefox */
+}
+.panel-group input:-ms-input-placeholder {
+  color: white;
+  opacity: 80%;
+  /* Firefox */
+}
+.panel-group input::placeholder {
+  color: white;
+  opacity: 80%;
+  /* Firefox */
+}
+.panel-group input:focus {
+  background: transparent;
+  box-shadow: none;
+  color: white;
 }
 
-#btnIngredients {
-  background: #3282F7;
+.btnFleche {
+  border: none;
+  background: transparent;
+  padding-left: 0px;
+  padding-right: 12px;
 }
-#btnIngredients:hover {
+.btnFleche:focus, .btnFleche::-moz-focus-inner {
+  outline: none;
+}
+
+.btn {
+  cursor: default;
+  display: flex;
+  min-width: 170px;
+  height: 69px;
+  padding: 0px;
+}
+
+.filterIngredient {
+  background: #3282F7;
+  border-radius: 5px;
+  height: 100%;
+}
+
+.btFilterIngredient:hover {
   background-color: #2d72db;
 }
 
-#btnAppareils {
+.filterAppareils {
   background: #68D9A4;
+  border-radius: 5px;
+  height: 100%;
 }
-#btnAppareils:hover {
+
+.btFilterAppareils:hover {
   background-color: #5dc193;
 }
 
-#btnUstensiles {
+.filterUstensiles {
   background: #D04F4F;
+  border-radius: 5px;
+  height: 100%;
 }
-#btnUstensiles:hover {
+
+.btnFilterUstensiles:hover {
   background-color: #bb4747;
+}
+
+button:after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-right: 3px solid white;
+  border-bottom: 3px solid white;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 20px;
+  top: 22px;
+  z-index: 10;
+  transition: transform 200ms ease-in;
+}
+
+/* Icon when the collapsible content is hidden */
+button.collapsed:after {
+  transform: rotate(225deg);
 }
 
 .panel-title > button {
@@ -79,6 +150,10 @@ form {
 
 .panel-title > button:hover {
   color: whitesmoke;
+}
+
+.panel-body {
+  color: white;
 }
 
 .listRecipesSection {
