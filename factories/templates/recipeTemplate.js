@@ -22,7 +22,7 @@ export default class RecipeTemplate {
                 <p class="recipeTime">${this.recipes[i].time}</p>
               </div>
               <div class="recipeBody">
-                <div class="allNeedCook">${""}</div>
+                <div class="allNeedCook">${this.allNeedCook(i)}</div>
                 <div class="explanationRecipe">${this.recipes[i].description}</div>
               </div>
           </div>
@@ -32,13 +32,21 @@ export default class RecipeTemplate {
     return recipeCard;
   }
 
-  allNeedCook() {
+  allNeedCook(i) {
     let text = "";
     let ingredient;
     let quantity;
     let unit;
     for (let j = 0; j < this.recipes[i].ingredients.length; j++) {
-
+      ingredient = this.recipes[i].ingredients[j].ingredient !== undefined ? this.recipes[i].ingredients[j].ingredient : "";
+      text += `
+      <ul>
+        <li class="ingredient">
+          ${ingredient}
+        </li>
+      </ul>
+      `;
     }
+    return text;
   }
 }
