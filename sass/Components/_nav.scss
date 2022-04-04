@@ -45,8 +45,7 @@ form {
 .btnFleche {
     border: none;
     background: transparent;
-    padding-left: 0px;
-    padding-right: 12px;
+    padding: 0px;
 
     &:focus, &::-moz-focus-inner {
         outline: none;
@@ -59,12 +58,43 @@ form {
     min-width: 170px;
     height: 69px;
     padding: 0px;
+    align-items: center;
 }
+
+.btn-lg > button {
+    content: '';
+    margin-right: 12px;
+    width: 10px;
+    height: 10px;
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
+    transform: rotate(45deg);
+    // position: absolute;
+    // right: 20px;
+    // top: 22px;
+    z-index: 10;
+    transition: transform 200ms ease-in;
+  }
+  /* Icon when the collapsible content is hidden */
+  button.collapsed {
+    transform: rotate(225deg);
+  }
+
+// .panel-title>button {
+//     color: white;
+//     font-size: 18px;
+//     line-height: 21.6px;
+// }
+
+// .panel-title>button:hover {
+//     color: whitesmoke;
+// }
 
 .filterIngredient {
     background: $blue;
     border-radius: 5px;
     height: 100%;
+    margin-left: 8px;
 }
 
 .btFilterIngredient:hover {
@@ -75,6 +105,10 @@ form {
     background: $green;
     border-radius: 5px;
     height: 100%;
+}
+
+.filterIngredient, .filterAppareils, .filterUstensiles {
+    margin-right: 20px;
 }
 
 .btFilterAppareils:hover {
@@ -90,34 +124,6 @@ form {
 .btnFilterUstensiles:hover {
         background-color: $orangeHover;
     }
-
-button:after {
-    content: '';
-    width: 7px;
-    height: 7px;
-    border-right: 3px solid white;
-    border-bottom: 3px solid white;
-    transform: rotate(45deg);
-    position: absolute;
-    right: 20px;
-    top: 22px;
-    z-index: 10;
-    transition: transform 200ms ease-in;
-  }
-  /* Icon when the collapsible content is hidden */
-  button.collapsed:after {
-    transform: rotate(225deg);
-  }
-
-.panel-title>button {
-    color: white;
-    font-size: 18px;
-    line-height: 21.6px;
-}
-
-.panel-title>button:hover {
-    color: whitesmoke;
-}
 
 .panel-body {
     color: white;
