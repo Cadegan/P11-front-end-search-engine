@@ -12,3 +12,51 @@
 .recipeCard { 
     margin-bottom: 30px;
 }
+
+.recipeTitel {
+    display: flex;
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.allNeedCook ul {
+   display: flex;
+   list-style-type: none;
+   padding-left: 20px;
+   margin-bottom: 0px;
+   font-size: 12px;
+}
+
+.ingredient {
+    font-weight: bold;
+}
+
+.recipeHeading {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.cookingTime {
+    display: flex;
+    align-items : center;
+    padding-right: 20px;
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.timer {
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+.explanationRecipe {
+    font-size: 12px;
+}

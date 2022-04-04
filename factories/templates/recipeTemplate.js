@@ -17,9 +17,11 @@ export default class RecipeTemplate {
           <div class="card mb-4 mb-lg-0 border-light">
             <img src="" class="card-img-top" alt="Recipe picture" >
               <div class="recipeHeading">
-                <h5 class="recipeTitel">${this.recipes[i].name}</p>
-                <img src="" alt="Clock logo">
-                <p class="recipeTime">${this.recipes[i].time}</p>
+                <h5 class="recipeTitel">${this.recipes[i].name}</h5>
+                  <div class="cookingTime">
+                  <img src="img/clock.svg" alt="Clock logo">
+                  <p class="timer">${this.recipes[i].time} min</p>
+                  </div>
               </div>
               <div class="recipeBody">
                 <div class="allNeedCook">${this.allNeedCook(i)}</div>
@@ -39,10 +41,18 @@ export default class RecipeTemplate {
     let unit;
     for (let j = 0; j < this.recipes[i].ingredients.length; j++) {
       ingredient = this.recipes[i].ingredients[j].ingredient !== undefined ? this.recipes[i].ingredients[j].ingredient : "";
+      quantity = this.recipes[i].ingredients[j].quantity !== undefined ? this.recipes[i].ingredients[j].quantity : "";
+      unit = this.recipes[i].ingredients[j].unit !== undefined ? this.recipes[i].ingredients[j].unit : "";
       text += `
       <ul>
         <li class="ingredient">
-          ${ingredient}
+          ${ingredient}:&nbsp;
+        </li>
+        <li class="quntity">
+          ${quantity}
+        </li>
+        <li class="unit">
+          ${unit}
         </li>
       </ul>
       `;
