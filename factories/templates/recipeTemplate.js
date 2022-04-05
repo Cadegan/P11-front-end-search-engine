@@ -26,7 +26,7 @@ export default class RecipeTemplate {
             <div class="mainRecipeBody">
               <div class="recipeBody">
                 <div class="allNeedCook">${this.allNeedCook(i)}</div>
-                <div class="explanationRecipe">${this.recipes[i].description}</div>
+                <p class="explanationRecipe">${this.recipes[i].description}</p>
               </div>
             </div>
         </article>

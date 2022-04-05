@@ -80,4 +80,8 @@
     width: 45%;
     margin-left: 5px;
     font-size: 12px;
+    display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }
