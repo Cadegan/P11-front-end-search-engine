@@ -9,7 +9,7 @@
     height: 178px;
 }
 
-.recipeCard { 
+.recipeCard {
     margin-bottom: 30px;
 }
 
@@ -25,11 +25,11 @@
 }
 
 .allNeedCook ul {
-   display: flex;
-   list-style-type: none;
-   padding-left: 20px;
-   margin-bottom: 0px;
-   font-size: 12px;
+    display: flex;
+    list-style-type: none;
+    padding-left: 20px;
+    margin-bottom: 0px;
+    font-size: 12px;
 }
 
 .ingredient {
@@ -39,7 +39,7 @@
 .recipeHeading {
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -47,20 +47,16 @@
 .mainRecipeBody {
     height: 186px;
     overflow: hidden;
-//     display: -webkit-box;
-// -webkit-line-clamp: 4;
-// -webkit-box-orient: vertical;
-// text-overflow: ellipsis;
 }
 
 .recipeBody {
     display: flex;
-    
+
 }
 
 .cookingTime {
     display: flex;
-    align-items : center;
+    align-items: center;
     padding-right: 20px;
 
     img {
@@ -81,7 +77,7 @@
     margin-left: 5px;
     font-size: 12px;
     display: -webkit-box;
-  -webkit-line-clamp: 10;
-  -webkit-box-orient: vertical;  
-  overflow: hidden;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
