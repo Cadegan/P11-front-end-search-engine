@@ -1,11 +1,12 @@
 /* eslint-disable import/extensions */
 import RecipeTemplate from "../factories/templates/recipeTemplate.js";
-// import RecipeData from "../factories/models/recipeData.js";
+import SearchBar from "./searchBar.js";
 
 async function init() {
   let data = await fetch("../data/recipes.json");
   data = await data.json();
   window.recipeCards = new RecipeTemplate(data);
+  window.searchBar = new SearchBar(data);
 }
 
 init();
