@@ -1,6 +1,6 @@
 /* eslint-disable import/extensions */
 import RecipeTemplate from "../factories/templates/recipeTemplate.js";
-import SearchBar from "./searchBar.js";
+import SearchBar from "./searchbar.js";
 
 async function init() {
   let data = await fetch("../data/recipes.json");
