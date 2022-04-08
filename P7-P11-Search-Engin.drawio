@@ -12,11 +12,13 @@
                 <mxCell id="WIyWlLk6GJQsqaUBKTNV-3" value="Input/recherche principal" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
                     <mxGeometry x="340" y="160" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="49" value="" style="edgeStyle=none;html=1;startArrow=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WIyWlLk6GJQsqaUBKTNV-10" target="UkGyuSFhHr8JKLfEkiaR-22" edge="1">
+                <mxCell id="49" value="" style="edgeStyle=none;html=1;startArrow=none;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WIyWlLk6GJQsqaUBKTNV-10" target="UkGyuSFhHr8JKLfEkiaR-8" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="Ck7R_PQds7wtFQjoZcoj-53" value="" style="edgeStyle=none;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="UkGyuSFhHr8JKLfEkiaR-8" target="WIyWlLk6GJQsqaUBKTNV-10">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="Ck7R_PQds7wtFQjoZcoj-53" value="" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="UkGyuSFhHr8JKLfEkiaR-8" target="UkGyuSFhHr8JKLfEkiaR-22">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="400" y="420" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
                 <mxCell id="UkGyuSFhHr8JKLfEkiaR-8" value="Fonction de recherche" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
                     <mxGeometry x="360" y="280" width="79" height="79" as="geometry"/>
@@ -68,8 +70,8 @@
                 <mxCell id="52" value="function globalLinearSearch(arr, key){&lt;br&gt;&amp;nbsp; &amp;nbsp; let results = []&lt;br&gt;&amp;nbsp; &amp;nbsp; for(let i = 0; i &amp;lt; arr.length; i++){&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; if(arr[i] === key){&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; results.push(i)&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;br&gt;&amp;nbsp; &amp;nbsp; }&lt;br&gt;&lt;br&gt;&amp;nbsp; &amp;nbsp; // If results array is empty, return -1&lt;br&gt;&amp;nbsp; &amp;nbsp; if(!results){&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; return -1&lt;br&gt;&amp;nbsp; &amp;nbsp; }&lt;br&gt;&lt;br&gt;&amp;nbsp; &amp;nbsp; return results&lt;br&gt;}" style="text;whiteSpace=wrap;html=1;strokeColor=default;rounded=1;fillColor=default;collapsible=0;dropTarget=0;autosize=0;fixDash=0;snapToPoint=0;metaEdit=0;backgroundOutline=0;resizeWidth=0;resizeHeight=0;treeFolding=0;treeMoving=0;comic=0;align=left;verticalAlign=middle;spacingLeft=30;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
                     <mxGeometry x="490" y="129" width="280" height="231" as="geometry"/>
                 </mxCell>
-                <mxCell id="WIyWlLk6GJQsqaUBKTNV-10" value="Database gobal" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-                    <mxGeometry x="359" y="400" width="80" height="80" as="geometry"/>
+                <mxCell id="WIyWlLk6GJQsqaUBKTNV-10" value="Database global" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+                    <mxGeometry x="239" y="279" width="80" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="Ck7R_PQds7wtFQjoZcoj-54" value="SelectedTags" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
                     <mxGeometry x="199" y="530" width="120" height="60" as="geometry"/>
