@@ -7,7 +7,8 @@ export default class SearchBar {
 
   mainSearch() {
     if (this.mainSearchBar.value.length > 3 || this.mainSearchBar.value.length === 0) {
-      filterManager.search(this.mainSearchBar.value.toString().toLowerCase());
+    // function()
     }
   }
 }
+
