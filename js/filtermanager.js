@@ -40,6 +40,14 @@ export default class filterManager {
             activIngredients = true;
           }
         }
+        if (activRecipes.name.toLowerCase().includes(result) ||
+          activRecipes.description.toLowerCase().includes(result) ||
+          activIngredients) {
+            newDataFiltred.push(activRecipes);
+          }
+      }
+      if (recipes.lenght === 0) {
+        document.querySelector(".listRecipesSection").textContent = "Aucune recette n'a été tourvée...";
       }
     }
   }
