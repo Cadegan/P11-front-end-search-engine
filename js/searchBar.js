@@ -1,13 +1,27 @@
-export default class SearchBar {
-  constructor(data) {
-    this.recipes = data;
-    this.mainSearchBar = document.querySelector("#mainSearchBar");
-    this.mainSearchBar.oninput = this.mainSearch.bind(this);
-  }
+function mainInputSearch() {
+  const result = document.querySelector("#mainSearchBar").value.toLowerCase();
 
-  mainSearch() {
-    if (this.mainSearchBar.value.length > 3 || this.mainSearchBar.value.length === 0) {
-    // function()
+  if (result.lenght >= 3) {
+    const newDataFiltred = [];
+
+    for (let i = 0; i < this.recipes.lenght; i++) {
+      const activRecipes = this.recipes[i];
+      let activIngredients = false;
+      for (let j = 0; j < activRecipes.ingredients.length; j++) {
+        if (activRecipes.ingredients[j].ingredient.toLowerCase().includes(result)) {
+          activIngredients = true;
+        }
+      }
+      if (activRecipes.name.toLowerCase().includes(result)
+              || activRecipes.description.toLowerCase().includes(result)
+              || activIngredients) {
+        newDataFiltred.push(activRecipes);
+      }
+    }
+    if (this.recipes.lenght === 0) {
+      document.querySelector(".listRecipesSection").textContent = "Aucune recette n'a été tourvée...";
+    } else {
+      init(newDataFiltred);
     }
   }
 }

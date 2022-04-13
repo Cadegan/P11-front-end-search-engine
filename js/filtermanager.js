@@ -19,12 +19,12 @@ export default class filterManager {
   //   } return false;
   // }
 
-  for(let j = 0; j <this.recipes[i].ingredients.length; j++) {
-  ingredient = this.recipes[i].ingredients[j].ingredient !== undefined ? this.recipes[i].ingredients[j].ingredient : "";
-  quantity = this.recipes[i].ingredients[j].quantity !== undefined ? this.recipes[i].ingredients[j].quantity : "";
-  unit = this.recipes[i].ingredients[j].unit !== undefined ? this.recipes[i].ingredients[j].unit : "";
+  // for(let j = 0; j <this.recipes[i].ingredients.length; j++) {
+  // ingredient = this.recipes[i].ingredients[j].ingredient !== undefined ? this.recipes[i].ingredients[j].ingredient : "";
+  // quantity = this.recipes[i].ingredients[j].quantity !== undefined ? this.recipes[i].ingredients[j].quantity : "";
+  // unit = this.recipes[i].ingredients[j].unit !== undefined ? this.recipes[i].ingredients[j].unit : "";
     
-}
+  // }
 
   mainInputSearch () {
     const result = document.querySelector("#mainSearchBar").value.toLowerCase();
