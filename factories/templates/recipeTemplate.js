@@ -11,7 +11,7 @@ export default class RecipeTemplate {
 
   templateOfRecipe() {
     let recipeCard = "";
-    for (let i = 0; i < this.recipes.length; i++) {
+    for (let i = 0; i < this.recipes.length; i += 1) {
       recipeCard += `
         <article class="recipeCard col-12 col-lg-4">
           <div class="card mb-4 mb-lg-0 border-light">
@@ -40,7 +40,7 @@ export default class RecipeTemplate {
     let ingredient;
     let quantity;
     let unit;
-    for (let j = 0; j < this.recipes[i].ingredients.length; j++) {
+    for (let j = 0; j < this.recipes[i].ingredients.length; j += 1) {
       ingredient = this.recipes[i].ingredients[j].ingredient !== undefined ? this.recipes[i].ingredients[j].ingredient : "";
       quantity = this.recipes[i].ingredients[j].quantity !== undefined ? this.recipes[i].ingredients[j].quantity : "";
       unit = this.recipes[i].ingredients[j].unit !== undefined ? this.recipes[i].ingredients[j].unit : "";
