@@ -25,7 +25,7 @@ export default class RecipeTemplate {
             </div>
             <div class="mainRecipeBody">
               <div class="recipeBody">
-                <div class="allNeedCook">${this.allNeedCook(i)}</div>
+                <div class="allNeedCook">${this.getRecipeElements(i)}</div>
                 <p class="explanationRecipe">${this.recipes[i].description}</p>
               </div>
             </div>
@@ -35,7 +35,7 @@ export default class RecipeTemplate {
     return recipeCard;
   }
 
-  allNeedCook(i) {
+  getRecipeElements(i) {
     let text = "";
     let ingredient;
     let quantity;
