@@ -5,7 +5,6 @@ import RecipeTemplate from "../factories/templates/recipeTemplate.js";
 
 const updateRecipes = (data) => {
   // data = await data.json();
-  // eslint-disable-next-line no-undef
   window.recipeCards = new RecipeTemplate(data);
   // window.searchBar = new SearchBar(data);
 };
@@ -16,3 +15,14 @@ const init = () => {
 };
 
 init();
+
+const filterList = (data) => {
+  const ingredientsList = [];
+  const applianceList = [];
+  const ustensilsList = [];
+
+  
+
+}
+
+// document.getElementById("main-search").addEventListener("input", mainInputSearch);
