@@ -1,11 +1,29 @@
 /* eslint-disable import/extensions */
 import RecipeTemplate from "../factories/templates/recipeTemplate.js";
+import TagFilters from "./tagfilter.js";
+
+function createTagFilters() {
+  const resetAllfilters = document.querySelectorAll(".panel-body");
+  resetAllfilters.forEach((data) => {
+    data.innerHTML = "";
+  });
+  const ingredientFilter = document.querySelector("#ingredients-list");
+  // const applianceFilter = document.querySelector("#appliance-list");
+  // const ustensilsFilter = document.querySelector("#ustensils-list");
+
+  const ingredientsList = [];
+  // const applianceList = [];
+  // const ustensilsList = [];
+
+  recipes.forEach((recipes) => {
+    const ingredientsFilterShow = new TagFilters(recipes, ingredientFilter, ingredientsList);
+    ingredientsFilterShow.ingredientsList();
+  });
+}
 
 const updateRecipes = (data) => {
-  // data = await data.json();
   window.recipeCards = new RecipeTemplate(data);
-  // filterList(data);
-  // window.searchBar = new SearchBar(data);
+  createTagFilters(data);
 };
 
 const init = () => {

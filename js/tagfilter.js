@@ -1,4 +1,4 @@
-class Filters {
+export default class TagFilters {
   constructor(recipe, container, arrayWithoutDuplicate) {
     this.recipe = recipe;
     this.container = container;
@@ -8,9 +8,19 @@ class Filters {
   ingredientsList() {
     this.recipe.ingredients.forEach((ingredient) => {
       ingredient.ingredient = ingredient.ingredient.toLowerCase();
-      ingredient.ingredient = ingredient.ingredient.charAt(0).toLowerCase()
+      ingredient.ingredient = ingredient.ingredient.charAt(0).toUpperCase()
       + ingredient.ingredient.slice(1);
+      if (!this.arrayWithoutDuplicate.includes(ingredient.ingredient)) {
+        this.arrayWithoutDuplicate.push(ingredient.ingredient);
+        const filterIngredientList = document.createElement("li");
+        filterIngredientList.setAttribute("type", ingredient.ingredient);
+        const filterIngredientLink = document.createElement("a");
+        filterIngredientList.appendChild(filterIngredientLink);
+        filterIngredientLink.innerHTML += ingredient.ingredient;
+        this.container.appendChild(filterIngredientList);
+      }
     });
+    return this.container;
   }
 }
 
