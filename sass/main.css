@@ -48,10 +48,6 @@ form {
   margin-left: 16px;
 }
 
-.panel-collapse {
-  padding-left: 8px;
-}
-
 .panel-group input {
   background: transparent;
   border: none;
@@ -121,22 +117,10 @@ button.collapsed {
   margin-left: 8px;
 }
 
-.btFilterIngredient:hover {
-  background-color: #2d72db;
-}
-
 .filterAppareils {
   background: #68D9A4;
   border-radius: 5px;
   height: 100%;
-}
-
-.filterIngredient, .filterAppareils, .filterUstensiles {
-  margin-right: 20px;
-}
-
-.btFilterAppareils:hover {
-  background-color: #5dc193;
 }
 
 .filterUstensiles {
@@ -145,12 +129,42 @@ button.collapsed {
   height: 100%;
 }
 
+.filterIngredient,
+.filterAppareils,
+.filterUstensiles {
+  margin-right: 20px;
+}
+
+.btFilterIngredient:hover,
+.btFilterAppareils:hover,
 .btnFilterUstensiles:hover {
-  background-color: #bb4747;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.panel-collapse {
+  max-height: 200px;
+  overflow-y: auto;
 }
 
 .panel-body {
   color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  max-width: 500px;
+  margin-left: 0px;
+  padding: 0px;
+  cursor: pointer;
+}
+.panel-body li {
+  list-style: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 15px;
+  transition: background-color 0.15s ease-in-out;
+}
+.panel-body li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .listRecipesSection {

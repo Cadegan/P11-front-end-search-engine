@@ -20,25 +20,22 @@ form {
     margin-left: 16px;
 }
 
-.panel-collapse {
-    padding-left: 8px;
-}
-
 .panel-group input {
-    background : transparent;
+    background: transparent;
     border: none;
     height: 100%;
     color: white;
 
     &::placeholder {
         color: white;
-        opacity: 80%; /* Firefox */
+        opacity: 80%;
+        /* Firefox */
     }
 
     &:focus {
-       background : transparent;
-       box-shadow : none;
-       color: white;
+        background: transparent;
+        box-shadow: none;
+        color: white;
     }
 }
 
@@ -47,7 +44,8 @@ form {
     background: transparent;
     padding: 0px;
 
-    &:focus, &::-moz-focus-inner {
+    &:focus,
+    &::-moz-focus-inner {
         outline: none;
     }
 }
@@ -61,7 +59,7 @@ form {
     align-items: center;
 }
 
-.btn-lg > button {
+.btn-lg>button {
     content: '';
     margin-right: 12px;
     width: 10px;
@@ -74,11 +72,12 @@ form {
     // top: 22px;
     z-index: 10;
     transition: transform 200ms ease-in;
-  }
-  /* Icon when the collapsible content is hidden */
-  button.collapsed {
+}
+
+/* Icon when the collapsible content is hidden */
+button.collapsed {
     transform: rotate(225deg);
-  }
+}
 
 // .panel-title>button {
 //     color: white;
@@ -97,23 +96,11 @@ form {
     margin-left: 8px;
 }
 
-.btFilterIngredient:hover {
-        background-color: $blueHover;
-    }
-
 .filterAppareils {
     background: $green;
     border-radius: 5px;
     height: 100%;
 }
-
-.filterIngredient, .filterAppareils, .filterUstensiles {
-    margin-right: 20px;
-}
-
-.btFilterAppareils:hover {
-        background-color: $greenHover;
-    }
 
 .filterUstensiles {
     background: $orange;
@@ -121,10 +108,43 @@ form {
     height: 100%;
 }
 
+.filterIngredient,
+.filterAppareils,
+.filterUstensiles {
+    margin-right: 20px;
+}
+
+.btFilterIngredient:hover,
+.btFilterAppareils:hover,
 .btnFilterUstensiles:hover {
-        background-color: $orangeHover;
-    }
+    background-color: $colorHover;
+}
+
+.panel-collapse {
+    max-height: 200px;
+    overflow-y: auto;
+}
 
 .panel-body {
     color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    max-width: 500px;
+    margin-left: 0px;
+    padding: 0px;
+    cursor: pointer;
+
+    li {
+        list-style: none;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding: 15px;
+        transition: background-color 0.15s ease-in-out;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+
 }
