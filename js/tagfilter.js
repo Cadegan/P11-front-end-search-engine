@@ -22,6 +22,38 @@ export default class TagFilters {
     });
     return this.container;
   }
+
+  applianceList() {
+    this.recipe.appliance = this.recipe.appliance.toLowerCase();
+    this.recipe.appliance = this.recipe.appliance.charAt(0).toUpperCase()
+      + this.recipe.appliance.slice(1);
+    if (!this.arrayWithoutDuplicate.includes(this.recipe.appliance)) {
+      this.arrayWithoutDuplicate.push(this.recipe.appliance);
+      const filterApplianceList = document.createElement("li");
+      filterApplianceList.setAttribute("type", this.recipe.appliance);
+      const filterApplianceLink = document.createElement("a");
+      filterApplianceList.appendChild(filterApplianceLink);
+      filterApplianceLink.innerHTML += this.recipe.appliance;
+      this.container.appendChild(filterApplianceList);
+    }
+    return this.container;
+  }
+
+  ustensilsList() {
+    this.recipe.ustensils = this.recipe.ustensils.toLowerCase();
+    this.recipe.ustensils = this.recipe.ustensils.charAt(0).toUpperCase()
+      + this.recipe.ustensils.slice(1);
+    if (!this.arrayWithoutDuplicate.includes(this.recipe.ustensils)) {
+      this.arrayWithoutDuplicate.push(this.recipe.ustensils);
+      const filterUstensilsList = document.createElement("li");
+      filterUstensilsList.setAttribute("type", this.recipe.ustensils);
+      const filterUstensilsLink = document.createElement("a");
+      filterUstensilsList.appendChild(filterUstensilsLink);
+      filterUstensilsLink.innerHTML += this.recipe.ustensils;
+      this.container.appendChild(filterUstensilsList);
+    }
+    return this.container;
+  }
 }
 
 // const filterList = (data) => {

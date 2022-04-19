@@ -8,16 +8,22 @@ function createTagFilters() {
     data.innerHTML = "";
   });
   const ingredientFilter = document.querySelector("#ingredients-list");
-  // const applianceFilter = document.querySelector("#appliance-list");
-  // const ustensilsFilter = document.querySelector("#ustensils-list");
+  const applianceFilter = document.querySelector("#appliance-list");
+  const ustensilsFilter = document.querySelector("#ustensils-list");
 
   const ingredientsList = [];
-  // const applianceList = [];
-  // const ustensilsList = [];
+  const applianceList = [];
+  const ustensilsList = [];
 
   recipes.forEach((recipes) => {
     const ingredientsFilterShow = new TagFilters(recipes, ingredientFilter, ingredientsList);
     ingredientsFilterShow.ingredientsList();
+
+    const applianceListFilterShow = new TagFilters(recipes, applianceFilter, applianceList);
+    applianceListFilterShow.applianceList();
+
+    const ustensilsListFilterShow = new TagFilters(recipes, ustensilsFilter, ustensilsList);
+    ustensilsListFilterShow.ustensilsList();
   });
 }
 
