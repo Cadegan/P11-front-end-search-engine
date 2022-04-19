@@ -40,18 +40,20 @@ export default class TagFilters {
   }
 
   ustensilsList() {
-    this.recipe.ustensils = this.recipe.ustensils.toLowerCase();
-    this.recipe.ustensils = this.recipe.ustensils.charAt(0).toUpperCase()
-      + this.recipe.ustensils.slice(1);
-    if (!this.arrayWithoutDuplicate.includes(this.recipe.ustensils)) {
-      this.arrayWithoutDuplicate.push(this.recipe.ustensils);
-      const filterUstensilsList = document.createElement("li");
-      filterUstensilsList.setAttribute("type", this.recipe.ustensils);
-      const filterUstensilsLink = document.createElement("a");
-      filterUstensilsList.appendChild(filterUstensilsLink);
-      filterUstensilsLink.innerHTML += this.recipe.ustensils;
-      this.container.appendChild(filterUstensilsList);
-    }
+    this.recipe.ustensils.forEach((ustensils) => {
+      ustensils = ustensils.toLowerCase();
+      ustensils = ustensils.charAt(0).toUpperCase()
+        + ustensils.slice(1);
+      if (!this.arrayWithoutDuplicate.includes(ustensils)) {
+        this.arrayWithoutDuplicate.push(ustensils);
+        const filterUstensilsList = document.createElement("li");
+        filterUstensilsList.setAttribute("type", ustensils);
+        const filterUstensilsLink = document.createElement("a");
+        filterUstensilsList.appendChild(filterUstensilsLink);
+        filterUstensilsLink.innerHTML += ustensils;
+        this.container.appendChild(filterUstensilsList);
+      }
+    });
     return this.container;
   }
 }
