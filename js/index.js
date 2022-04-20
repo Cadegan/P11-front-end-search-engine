@@ -30,11 +30,12 @@ function createTagFilters() {
 const updateRecipes = (data) => {
   window.recipeCards = new RecipeTemplate(data);
   createTagFilters(data);
+  tagListener();
 };
 
 const init = () => {
   updateRecipes(recipes);
-  mainInputSearch();
+  // mainInputSearch();
 };
 
 init();
