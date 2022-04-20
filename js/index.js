@@ -1,6 +1,6 @@
 /* eslint-disable import/extensions */
 import RecipeTemplate from "../factories/templates/recipeTemplate.js";
-import TagListTemplate from "./tagfilter.js";
+import TagListTemplate from "./tagListTemplate.js";
 
 function tagListDisplay() {
   const resetAllfilters = document.querySelectorAll(".panel-body");
