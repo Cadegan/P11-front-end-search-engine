@@ -14,9 +14,7 @@ export default class TagFilters {
         this.arrayWithoutDuplicate.push(ingredient.ingredient);
         const filterIngredientList = document.createElement("li");
         filterIngredientList.setAttribute("type", ingredient.ingredient);
-        const filterIngredientLink = document.createElement("a");
-        filterIngredientList.appendChild(filterIngredientLink);
-        filterIngredientLink.innerHTML += ingredient.ingredient;
+        filterIngredientList.innerHTML += ingredient.ingredient;
         this.container.appendChild(filterIngredientList);
       }
     });
@@ -31,9 +29,7 @@ export default class TagFilters {
       this.arrayWithoutDuplicate.push(this.recipe.appliance);
       const filterApplianceList = document.createElement("li");
       filterApplianceList.setAttribute("type", this.recipe.appliance);
-      const filterApplianceLink = document.createElement("a");
-      filterApplianceList.appendChild(filterApplianceLink);
-      filterApplianceLink.innerHTML += this.recipe.appliance;
+      filterApplianceList.innerHTML += this.recipe.appliance;
       this.container.appendChild(filterApplianceList);
     }
     return this.container;
@@ -48,9 +44,7 @@ export default class TagFilters {
         this.arrayWithoutDuplicate.push(ustensils);
         const filterUstensilsList = document.createElement("li");
         filterUstensilsList.setAttribute("type", ustensils);
-        const filterUstensilsLink = document.createElement("a");
-        filterUstensilsList.appendChild(filterUstensilsLink);
-        filterUstensilsLink.innerHTML += ustensils;
+        filterUstensilsList.innerHTML += ustensils;
         this.container.appendChild(filterUstensilsList);
       }
     });
