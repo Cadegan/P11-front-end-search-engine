@@ -16,7 +16,7 @@ const tagTemplate = (tagLabel, tag) => {
 
 // Clonage du tag s'il est selectionné
 const tagListener = () => {
-  const allTags = document.querySelectorAll(".panel-body a"); // Si on met "li", on peut cloner "a" ou "li" selon ou on clique
+  const allTags = document.querySelectorAll(".panel-body li");
   allTags.forEach((li) => li.addEventListener("click", (event) => {
     const tag = event.target.cloneNode(true);
     switch (li.closest("ul").id) {
