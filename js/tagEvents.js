@@ -9,11 +9,13 @@ const tagTemplate = (tagLabel, tag) => {
   tag.classList.add(tagLabel);
   tag.classList.add("btn");
   tag.appendChild(closeTagLabel);
-  tag.addEventListener("click", (event) => {
-    event.target.parentElement.removeChild(event.target);
-  });
+  tag.setAttribute("onclick", "closeTag(this)");
   document.getElementById("tagSection").appendChild(tag);
 };
+
+function closeTag(tag) {
+  tag.parentElement.removeChild(tag);
+}
 
 // Clonage du tag s'il est selectionné
 const tagListener = () => {
