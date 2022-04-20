@@ -1,4 +1,4 @@
-export default class TagFilters {
+export default class TagListTemplate {
   constructor(recipe, container, arrayWithoutDuplicate) {
     this.recipe = recipe;
     this.container = container;

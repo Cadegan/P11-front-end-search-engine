@@ -1,6 +1,6 @@
 /* eslint-disable import/extensions */
 import RecipeTemplate from "../factories/templates/recipeTemplate.js";
-import TagFilters from "./tagfilter.js";
+import TagListTemplate from "./tagfilter.js";
 
 function tagListDisplay() {
   const resetAllfilters = document.querySelectorAll(".panel-body");
@@ -16,13 +16,13 @@ function tagListDisplay() {
   const ustensilsList = [];
 
   recipes.forEach((recipes) => {
-    const ingredientsFilterShow = new TagFilters(recipes, ingredientFilter, ingredientsList);
+    const ingredientsFilterShow = new TagListTemplate(recipes, ingredientFilter, ingredientsList);
     ingredientsFilterShow.ingredientsList();
 
-    const applianceListFilterShow = new TagFilters(recipes, applianceFilter, applianceList);
+    const applianceListFilterShow = new TagListTemplate(recipes, applianceFilter, applianceList);
     applianceListFilterShow.applianceList();
 
-    const ustensilsListFilterShow = new TagFilters(recipes, ustensilsFilter, ustensilsList);
+    const ustensilsListFilterShow = new TagListTemplate(recipes, ustensilsFilter, ustensilsList);
     ustensilsListFilterShow.ustensilsList();
   });
 }

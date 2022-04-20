@@ -1,12 +1,13 @@
 const tagTemplate = (tagLabel, tag) => {
   // Création de l'icone close
-  const closeTagLabel = document.createElement("div");
+  const closeTagLabel = document.createElement("img");
   closeTagLabel.setAttribute("alt", "close icon");
-  closeTagLabel.setAttribute("src", "../img/close.svg");
+  closeTagLabel.setAttribute("src", "/img/close.svg");
   closeTagLabel.classList.add("CloseTag");
 
   // Ajout des class aux tags et des boutons "closeTagLabel"
   tag.classList.add(tagLabel);
+  tag.classList.add("btn");
   tag.appendChild(closeTagLabel);
   tag.addEventListener("click", (event) => {
     event.target.parentElement.removeChild(event.target);

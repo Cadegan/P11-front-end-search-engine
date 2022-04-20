@@ -44,10 +44,6 @@ form {
   padding: 0px;
 }
 
-.tagSection {
-  margin-left: 16px;
-}
-
 .panel-group input {
   background: transparent;
   border: none;
@@ -105,7 +101,6 @@ form {
   transition: transform 200ms ease-in;
 }
 
-/* Icon when the collapsible content is hidden */
 button.collapsed {
   transform: rotate(225deg);
 }
@@ -165,6 +160,43 @@ button.collapsed {
 }
 .panel-body li:hover {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+#tagSection {
+  margin-left: 16px;
+}
+#tagSection li {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  cursor: pointer;
+  list-style: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 15px;
+  transition: background-color 0.15s ease-in-out;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+#tagSection li:hover {
+  color: black;
+}
+
+.ingredientsTag {
+  background-color: #3282F7;
+}
+
+.applianceTag {
+  background-color: #68D9A4;
+}
+
+.ustensilsTag {
+  background-color: #D04F4F;
+}
+
+.CloseTag {
+  width: 25px;
 }
 
 .listRecipesSection {

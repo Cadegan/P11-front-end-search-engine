@@ -16,10 +16,6 @@ form {
     padding: 0px;
 }
 
-.tagSection {
-    margin-left: 16px;
-}
-
 .panel-group input {
     background: transparent;
     border: none;
@@ -67,27 +63,13 @@ form {
     border-right: 3px solid white;
     border-bottom: 3px solid white;
     transform: rotate(45deg);
-    // position: absolute;
-    // right: 20px;
-    // top: 22px;
     z-index: 10;
     transition: transform 200ms ease-in;
 }
 
-/* Icon when the collapsible content is hidden */
 button.collapsed {
     transform: rotate(225deg);
 }
-
-// .panel-title>button {
-//     color: white;
-//     font-size: 18px;
-//     line-height: 21.6px;
-// }
-
-// .panel-title>button:hover {
-//     color: whitesmoke;
-// }
 
 .filterIngredient {
     background: $blue;
@@ -147,4 +129,43 @@ button.collapsed {
         }
     }
 
+}
+
+#tagSection {
+    margin-left: 16px;
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        cursor: pointer;
+        list-style: none;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding: 15px;
+        transition: background-color 0.15s ease-in-out;
+        margin-right: 8px;
+        margin-bottom: 8px;
+
+        &:hover {
+            color: black;
+        }
+    }
+}
+
+.ingredientsTag {
+    background-color: $blue;
+}
+
+.applianceTag {
+    background-color: $green;
+}
+
+.ustensilsTag {
+    background-color: $orange;
+}
+
+.CloseTag {
+    width: 25px;
 }
