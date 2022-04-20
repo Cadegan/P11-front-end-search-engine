@@ -2,7 +2,7 @@
 import RecipeTemplate from "../factories/templates/recipeTemplate.js";
 import TagFilters from "./tagfilter.js";
 
-function createTagFilters() {
+function tagListDisplay() {
   const resetAllfilters = document.querySelectorAll(".panel-body");
   resetAllfilters.forEach((data) => {
     data.innerHTML = "";
@@ -29,13 +29,13 @@ function createTagFilters() {
 
 const updateRecipes = (data) => {
   window.recipeCards = new RecipeTemplate(data);
-  createTagFilters(data);
+  tagListDisplay(data);
   tagListener();
 };
 
 const init = () => {
   updateRecipes(recipes);
-  // mainInputSearch();
+  mainInputSearch();
 };
 
 init();
