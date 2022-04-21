@@ -2,7 +2,7 @@
 
 const mainInputSearch = () => {
   const filtredRecipes = recipes;
-  const inputEnter = document.querySelector("#mainSearchBar").value.toLowerCase();
+  const inputEnter = document.querySelector("#mainInputSearch").value.toLowerCase();
 
   if (inputEnter.lenght >= 3) {
     const dataFiltred = [];
@@ -30,4 +30,4 @@ const mainInputSearch = () => {
   }
 };
 
-document.getElementById("mainSearchBar").addEventListener("input", mainInputSearch);
+document.getElementById("mainInputSearch").addEventListener("input", mainInputSearch);

@@ -3,11 +3,11 @@ const tagTemplate = (tagLabel, tag) => {
   const closeTagLabel = document.createElement("img");
   closeTagLabel.setAttribute("alt", "close icon");
   closeTagLabel.setAttribute("src", "/img/close.svg");
-  closeTagLabel.classList.add("CloseTag");
+  closeTagLabel.classList.add("closeTag");
 
   // Ajout des class aux tags et des boutons "closeTagLabel"
   tag.classList.add(tagLabel);
-  tag.classList.add("btn");
+  // tag.classList.add("btn");
   tag.appendChild(closeTagLabel);
   tag.setAttribute("onclick", "closeTag(this)");
   document.getElementById("tagSection").appendChild(tag);
@@ -17,7 +17,7 @@ function closeTag(tag) {
   tag.parentElement.removeChild(tag);
 }
 
-// Clonage du tag s'il est selectionné
+// Clonage du tag quand il est selectionné
 const tagListener = () => {
   const allTags = document.querySelectorAll(".panel-body li");
   allTags.forEach((li) => li.addEventListener("click", (event) => {

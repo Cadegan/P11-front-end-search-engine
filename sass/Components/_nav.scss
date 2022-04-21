@@ -2,6 +2,31 @@ form {
     width: 100%;
 }
 
+.mainNavbar {
+    display: flex;
+    align-items: center;
+    padding: .5rem 1rem;
+
+    img {
+        height: 25px;
+        width: 25px;
+        position: absolute;
+        right: 30px;
+    }
+}
+
+#mainInputSearch {
+    height: 69px;
+    background-color: $greyLight;
+    border: $greyLight;
+
+    &::placeholder {
+        color: black;
+        opacity: 40%;
+        /* Firefox */
+    }
+}
+
 .panel-group {
     display: flex;
 }
@@ -132,24 +157,35 @@ button.collapsed {
 }
 
 #tagSection {
+    margin-top: 16px;
     margin-left: 16px;
 
     li {
+        min-width: 107px;
+        height: 37px;
         display: flex;
         justify-content: space-between;
         color: white;
         cursor: pointer;
         list-style: none;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
         padding: 15px;
         transition: background-color 0.15s ease-in-out;
-        margin-right: 8px;
-        margin-bottom: 8px;
+        margin-right: 12px;
+        margin-bottom: 12px;
+        align-items: center;
+        font-weight: 400;
+        text-align: center;
+        user-select: none;
+        font-size: 14px;
+        line-height: 1.5;
+        border-radius: 0.25rem;
 
         &:hover {
             color: black;
+        }
+
+        img {
+            margin-left: 10px;
         }
     }
 }
@@ -166,6 +202,6 @@ button.collapsed {
     background-color: $orange;
 }
 
-.CloseTag {
-    width: 25px;
+.closeTag {
+    width: 20px;
 }
