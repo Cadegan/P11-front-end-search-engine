@@ -1,7 +1,8 @@
-// import init from "./index";
+import recipes from "../data/recipes";
 
 const mainInputSearch = () => {
   const filtredRecipes = recipes;
+  console.log("filtredRecipes =", filtredRecipes);
   const inputEnter = document.querySelector("#mainInputSearch").value.toLowerCase();
 
   if (inputEnter.lenght >= 3) {
