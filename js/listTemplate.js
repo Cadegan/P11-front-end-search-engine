@@ -1,4 +1,4 @@
-export default class TagListTemplate {
+export default class ListTemplate {
   constructor(recipe, container, arrayWithoutDuplicate) {
     this.recipe = recipe;
     this.container = container;
