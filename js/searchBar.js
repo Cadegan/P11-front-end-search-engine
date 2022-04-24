@@ -1,4 +1,4 @@
-// import recipes from "../data/recipes";
+import recipes from "../data/recipes";
 
 const mainInputSearch = () => {
   const filtredRecipes = recipes;
