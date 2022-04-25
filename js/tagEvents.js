@@ -11,15 +11,22 @@ const tagTemplate = (tagLabel, tag) => {
 
   // Ajout des class aux tags et des boutons "closeTagLabel"
   tag.classList.add(tagLabel);
-  // tag.classList.add("btn");
   tag.appendChild(closeTagLabel);
-  tag.setAttribute("onclick", "closeTagFunction(this)");
+  // tag.setAttribute("onclick", "closeTag(this)");
+  // function closeTag(tagFocus) {
+  //   tagFocus.parentElement.removeChild();
+  // }
+
+  tag.addEventListener("click", (event) => {
+    event.target.parentElement.removeChild(event.target);
+  });
+
   document.getElementById("tagSection").appendChild(tag);
 };
 
-function closeTagFunction(tag) {
-  tag.parentElement.removeChild(tag);
-}
+// function closeTag(closeTagClic) {
+//   closeTagClic.parentNode.removeChild();
+// }
 
 // Clonage du tag quand il est selectionné
 function tagActivListener() {
@@ -69,4 +76,4 @@ function tagListDisplay() {
 
 export { tagListDisplay };
 export { tagActivListener };
-// export { closeTagFunction };
+// export { closeTag };
