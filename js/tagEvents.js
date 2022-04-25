@@ -3,7 +3,6 @@ import ListTemplate from "./listTemplate.js";
 import recipes from "../data/recipes.js";
 
 const tagTemplate = (tagLabel, tag) => {
-  // Création de l'icone close
   const closeTagLabel = document.createElement("img");
   closeTagLabel.setAttribute("alt", "close icon");
   closeTagLabel.setAttribute("src", "/img/close.svg");

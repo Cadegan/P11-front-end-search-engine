@@ -1,9 +1,21 @@
-// import recipes from "../data/recipes";
+import recipes from "../data/recipes";
 
-const mainInputSearch = () => {
-  const filtredRecipes = recipes;
+function mainInputSearch() {
+  let filtredRecipes = recipes;
   console.log("filtredRecipes =", filtredRecipes);
   const inputEnter = document.querySelector("#mainInputSearch").value.toLowerCase();
+
+  // TagSearch
+  document.querySelectorAll("#tagSection li").forEach((tag) => {
+    const tagSearchInput = tag.textContent.toLowerCase();
+    filtredRecipes = filtredRecipes.filter((recipe) =>
+      // filter() retourne un nouveau tableau si le callback some(e) retourne "true"
+      // cad si un element dans "recipes" correspond au "tagSearchInput"
+      recipe.ingredients.some((e) => e.ingredient.toLowerCase().includes(tagSearchInput))
+      || recipe.appliance.toLowerCase().includes(tagSearchInput)
+      || recipe.ustensils.some((ustensil) => ustensil.toLowerCase().includes(tagSearchInput)));
+    updateContent(filtredRecipes);
+  });
 
   if (inputEnter.lenght >= 3) {
     const dataFiltred = [];
@@ -29,6 +41,8 @@ const mainInputSearch = () => {
   } else {
     updateRecipes(filtredRecipes);
   }
-};
+}
 
 document.getElementById("mainInputSearch").addEventListener("input", mainInputSearch);
+
+export default mainInputSearch;
