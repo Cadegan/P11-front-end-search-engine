@@ -4,17 +4,17 @@ import { inputSearchEvents, functionSearch } from "./searchBar.js";
 import RecipeCardTemplate from "../factories/templates/recipeCardTemplate.js";
 import { tagActivListener, tagListDisplay } from "./tagEvents.js";
 
-const updateRecipes = (data) => {
+function updateRecipes(data) {
   window.recipeCards = new RecipeCardTemplate(data);
   tagListDisplay(data);
   tagActivListener();
-};
+}
 
-const init = () => {
+function init() {
   updateRecipes(recipes);
   functionSearch();
   inputSearchEvents();
-};
+}
 
 init();
 

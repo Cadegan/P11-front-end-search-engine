@@ -2,8 +2,7 @@ import { updateRecipes } from "./index.js";
 
 function functionSearch() {
   let filtredRecipes = recipes;
-  console.log("filtredRecipes =", filtredRecipes);
-  const inputEnter = document.querySelector("#mainInputSearch").value.toLowerCase();
+  const mainInputSearch = document.querySelector("#mainInputSearch").value.toLowerCase();
 
   // TagSearch
   document.querySelectorAll("#tagSection li").forEach((tag) => {
@@ -15,20 +14,21 @@ function functionSearch() {
       || recipe.appliance.toLowerCase().includes(tagSearchInput)
       || recipe.ustensils.some((ustensil) => ustensil.toLowerCase().includes(tagSearchInput)));
     updateRecipes(filtredRecipes);
+    console.log("filtredRecipes =", filtredRecipes);
   });
 
-  if (inputEnter.lenght >= 3) {
+  if (mainInputSearch.lenght >= 3) {
     const dataFiltred = [];
     for (let i = 0; i < filtredRecipes.lenght; i += 1) {
       const activRecipes = filtredRecipes[i];
       let activIngredients = false;
       for (let j = 0; j < activRecipes.ingredients.length; j += 1) {
-        if (activRecipes.ingredients[j].ingredient.toLowerCase().includes(inputEnter)) {
+        if (activRecipes.ingredients[j].ingredient.toLowerCase().includes(mainInputSearch)) {
           activIngredients = true;
         }
       }
-      if (activRecipes.name.toLowerCase().includes(inputEnter)
-          || activRecipes.description.toLowerCase().includes(inputEnter)
+      if (activRecipes.name.toLowerCase().includes(mainInputSearch)
+          || activRecipes.description.toLowerCase().includes(mainInputSearch)
           || activIngredients) {
         dataFiltred.push(activRecipes);
       }
@@ -38,6 +38,7 @@ function functionSearch() {
     } else {
       updateRecipes(dataFiltred);
     }
+    console.log("dataFiltred =", dataFiltred);
   } else {
     updateRecipes(filtredRecipes);
   }

@@ -46,7 +46,7 @@ function tagActivListener() {
         // no default
     }
   }));
-  console.log(allTags);
+  // console.log(allTags);
 }
 
 function tagListDisplay() {
