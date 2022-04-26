@@ -1,4 +1,12 @@
-import recipes from "../data/recipes";
+import RecipeCardTemplate from "../factories/templates/recipeCardTemplate.js";
+import { tagActivListener, tagListDisplay } from "./tagEvents.js";
+// import recipes from "../data/recipes";
+
+const updateRecipes = (data) => {
+  window.recipeCards = new RecipeCardTemplate(data);
+  tagListDisplay(data);
+  tagActivListener();
+};
 
 function mainInputSearch() {
   let filtredRecipes = recipes;
@@ -14,7 +22,7 @@ function mainInputSearch() {
       recipe.ingredients.some((e) => e.ingredient.toLowerCase().includes(tagSearchInput))
       || recipe.appliance.toLowerCase().includes(tagSearchInput)
       || recipe.ustensils.some((ustensil) => ustensil.toLowerCase().includes(tagSearchInput)));
-    updateContent(filtredRecipes);
+    updateRecipes(filtredRecipes);
   });
 
   if (inputEnter.lenght >= 3) {
@@ -43,6 +51,14 @@ function mainInputSearch() {
   }
 }
 
-document.getElementById("mainInputSearch").addEventListener("input", mainInputSearch);
+const searchEvents = () => {
+  const tagSearchInput = document.querySelectorAll(".search-input");
+  tagSearchInput.forEach((input) => {
+    input.addEventListener("input", mainInputSearch);
+  });
+};
 
-export default mainInputSearch;
+// document.getElementById("mainInputSearch").addEventListener("input", mainInputSearch);
+
+// export { mainInputSearch, searchEvents };
+export { updateRecipes };

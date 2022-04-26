@@ -1,4 +1,4 @@
-export default class RecipeTemplate {
+export default class RecipeCardTemplate {
   constructor(recipe) {
     this.recipes = recipe;
     this.container = document.querySelector(".listRecipesSection");

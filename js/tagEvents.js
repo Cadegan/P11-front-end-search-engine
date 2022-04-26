@@ -1,6 +1,14 @@
 /* eslint-disable import/extensions */
 import ListTemplate from "./listTemplate.js";
-import recipes from "../data/recipes.js";
+// import recipes from "../data/recipes.js";
+// import mainInputSearch from "./searchBar.js";
+
+// const searchEvents = () => {
+//   const tagSearchInput = document.querySelectorAll(".search-input");
+//   tagSearchInput.forEach((input) => {
+//     input.addEventListener("input", mainInputSearch);
+//   });
+// };
 
 const tagTemplate = (tagLabel, tag) => {
   const closeTagLabel = document.createElement("img");
@@ -8,7 +16,6 @@ const tagTemplate = (tagLabel, tag) => {
   closeTagLabel.setAttribute("src", "/img/close.svg");
   closeTagLabel.classList.add("closeTag");
 
-  // Ajout des class aux tags et des boutons "closeTagLabel"
   tag.classList.add(tagLabel);
   tag.appendChild(closeTagLabel);
   // tag.setAttribute("onclick", "closeTag(this)");
@@ -18,16 +25,18 @@ const tagTemplate = (tagLabel, tag) => {
 
   tag.addEventListener("click", (event) => {
     event.target.parentElement.removeChild(event.target);
+    mainInputSearch();
   });
 
   document.getElementById("tagSection").appendChild(tag);
+  mainInputSearch();
 };
 
 // function closeTag(closeTagClic) {
 //   closeTagClic.parentNode.removeChild();
 // }
 
-// Clonage du tag quand il est selectionné
+// Clonage/création du tag quand il est selectionné
 function tagActivListener() {
   const allTags = document.querySelectorAll(".panel-body li");
   allTags.forEach((li) => li.addEventListener("click", (event) => {
@@ -75,4 +84,5 @@ function tagListDisplay() {
 
 export { tagListDisplay };
 export { tagActivListener };
+// export { searchEvents };
 // export { closeTag };
