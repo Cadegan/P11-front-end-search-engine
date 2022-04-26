@@ -1,14 +1,6 @@
-import RecipeCardTemplate from "../factories/templates/recipeCardTemplate.js";
-import { tagActivListener, tagListDisplay } from "./tagEvents.js";
-// import recipes from "../data/recipes";
+import { updateRecipes } from "./index.js";
 
-const updateRecipes = (data) => {
-  window.recipeCards = new RecipeCardTemplate(data);
-  tagListDisplay(data);
-  tagActivListener();
-};
-
-function mainInputSearch() {
+function functionSearch() {
   let filtredRecipes = recipes;
   console.log("filtredRecipes =", filtredRecipes);
   const inputEnter = document.querySelector("#mainInputSearch").value.toLowerCase();
@@ -51,14 +43,13 @@ function mainInputSearch() {
   }
 }
 
-const searchEvents = () => {
+const inputSearchEvents = () => {
   const tagSearchInput = document.querySelectorAll(".search-input");
   tagSearchInput.forEach((input) => {
-    input.addEventListener("input", mainInputSearch);
+    input.addEventListener("input", functionSearch);
   });
 };
 
 // document.getElementById("mainInputSearch").addEventListener("input", mainInputSearch);
 
-export { mainInputSearch, searchEvents };
-export { updateRecipes };
+export { functionSearch, inputSearchEvents };

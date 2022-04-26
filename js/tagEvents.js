@@ -1,14 +1,6 @@
 /* eslint-disable import/extensions */
 import ListTemplate from "../factories/templates/listTemplate.js";
-// import recipes from "../data/recipes.js";
-import { mainInputSearch } from "./searchBar.js";
-
-// const searchEvents = () => {
-//   const tagSearchInput = document.querySelectorAll(".search-input");
-//   tagSearchInput.forEach((input) => {
-//     input.addEventListener("input", mainInputSearch);
-//   });
-// };
+import { functionSearch } from "./searchBar.js";
 
 const tagTemplate = (tagLabel, tag) => {
   const closeTagLabel = document.createElement("img");
@@ -25,11 +17,11 @@ const tagTemplate = (tagLabel, tag) => {
 
   tag.addEventListener("click", (event) => {
     event.target.parentElement.removeChild(event.target);
-    mainInputSearch();
+    functionSearch();
   });
 
   document.getElementById("tagSection").appendChild(tag);
-  mainInputSearch();
+  functionSearch();
 };
 
 // function closeTag(closeTagClic) {
@@ -84,5 +76,3 @@ function tagListDisplay() {
 
 export { tagListDisplay };
 export { tagActivListener };
-// export { searchEvents };
-// export { closeTag };
