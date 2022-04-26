@@ -60,5 +60,5 @@ const searchEvents = () => {
 
 // document.getElementById("mainInputSearch").addEventListener("input", mainInputSearch);
 
-// export { mainInputSearch, searchEvents };
+export { mainInputSearch, searchEvents };
 export { updateRecipes };

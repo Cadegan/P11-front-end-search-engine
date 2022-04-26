@@ -1,7 +1,7 @@
 /* eslint-disable import/extensions */
-import ListTemplate from "./listTemplate.js";
+import ListTemplate from "../factories/templates/listTemplate.js";
 // import recipes from "../data/recipes.js";
-// import mainInputSearch from "./searchBar.js";
+import { mainInputSearch } from "./searchBar.js";
 
 // const searchEvents = () => {
 //   const tagSearchInput = document.querySelectorAll(".search-input");
