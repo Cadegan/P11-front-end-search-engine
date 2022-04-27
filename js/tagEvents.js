@@ -1,4 +1,5 @@
 /* eslint-disable import/extensions */
+import recipes from "../data/recipes.js";
 import ListTemplate from "../factories/templates/listTemplate.js";
 import { functionSearch } from "./searchBar.js";
 

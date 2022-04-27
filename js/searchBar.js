@@ -1,3 +1,4 @@
+import recipes from "../data/recipes.js";
 import { updateRecipes } from "./index.js";
 
 function functionSearch() {
@@ -21,7 +22,7 @@ function functionSearch() {
   if (mainInputSearch.lenght >= 3) {
     const dataFiltredByInput = [];
     // Pour chercher les ingredients il faut faire une double boucle :
-    // parmi les recettes puis les ingredients disponibles
+    // parmi les recettes actives/taguée puis les ingredients disponibles
     for (let i = 0; i < dataFiltredByTag.lenght; i += 1) {
       const activRecipes = dataFiltredByTag[i];
       let activIngredients = false;
