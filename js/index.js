@@ -2,12 +2,12 @@
 import { inputSearchEvents, functionSearch } from "./searchBar.js";
 
 import RecipeCardTemplate from "../factories/templates/recipeCardTemplate.js";
-import { tagActivListener, tagListDisplay } from "./tagEvents.js";
+import { tagDisplay, listDisplay } from "./tagEvents.js";
 
 function updateRecipes(data) {
   window.recipeCards = new RecipeCardTemplate(data);
-  tagListDisplay(data);
-  tagActivListener();
+  listDisplay(data);
+  tagDisplay();
 }
 
 function init() {

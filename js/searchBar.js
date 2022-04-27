@@ -1,29 +1,29 @@
 import { updateRecipes } from "./index.js";
 
 function functionSearch() {
-  let RecipesFiltredByTag = recipes;
+  let dataFiltredByTag = recipes;
   const mainInputSearch = document.getElementById("mainInputSearch").value.toLowerCase();
 
   // TagSelected
   document.querySelectorAll("#tagSection li").forEach((tag) => {
     const tagSelected = tag.textContent.toLowerCase();
-    RecipesFiltredByTag = RecipesFiltredByTag.filter((recipe) =>
+    dataFiltredByTag = dataFiltredByTag.filter((recipe) =>
       // filter() retourne un nouveau tableau si le callback some(e) retourne "true"
       // cad si un element dans "recipes" correspond au "tagSelected"
       recipe.ingredients.some((e) => e.ingredient.toLowerCase().includes(tagSelected))
       || recipe.appliance.toLowerCase().includes(tagSelected)
       || recipe.ustensils.some((ustensil) => ustensil.toLowerCase().includes(tagSelected)));
-    updateRecipes(RecipesFiltredByTag);
-    console.log("RecipesFiltredByTag =", RecipesFiltredByTag);
+    updateRecipes(dataFiltredByTag);
+    console.log("dataFiltredByTag =", dataFiltredByTag);
   });
 
   // Input search
   if (mainInputSearch.lenght >= 3) {
-    const dataFiltred = [];
+    const dataFiltredByInput = [];
     // Pour chercher les ingredients il faut faire une double boucle :
     // parmi les recettes puis les ingredients disponibles
-    for (let i = 0; i < RecipesFiltredByTag.lenght; i += 1) {
-      const activRecipes = RecipesFiltredByTag[i];
+    for (let i = 0; i < dataFiltredByTag.lenght; i += 1) {
+      const activRecipes = dataFiltredByTag[i];
       let activIngredients = false;
       for (let j = 0; j < activRecipes.ingredients.length; j += 1) {
         if (activRecipes.ingredients[j].ingredient.toLowerCase().includes(mainInputSearch)) {
@@ -33,17 +33,17 @@ function functionSearch() {
       if (activRecipes.name.toLowerCase().includes(mainInputSearch)
           || activRecipes.description.toLowerCase().includes(mainInputSearch)
           || activIngredients) {
-        dataFiltred.push(activRecipes);
+        dataFiltredByInput.push(activRecipes);
       }
     }
-    if (RecipesFiltredByTag.lenght === 0) {
+    if (dataFiltredByTag.lenght === 0) {
       document.querySelector(".listRecipesSection").textContent = "Aucune recette n'a été tourvée...";
     } else {
-      updateRecipes(dataFiltred);
+      updateRecipes(dataFiltredByInput);
     }
-    console.log("dataFiltred =", dataFiltred);
+    console.log("dataFiltredByInput =", dataFiltredByInput);
   } else {
-    updateRecipes(RecipesFiltredByTag);
+    updateRecipes(dataFiltredByTag);
   }
 }
 

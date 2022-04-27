@@ -29,7 +29,7 @@ const tagTemplate = (tagLabel, tag) => {
 // }
 
 // Clonage/création du tag quand il est selectionné
-function tagActivListener() {
+function tagDisplay() {
   const allTags = document.querySelectorAll(".panel-body li");
   allTags.forEach((li) => li.addEventListener("click", (event) => {
     const tag = event.target.cloneNode(true);
@@ -49,7 +49,7 @@ function tagActivListener() {
   console.log(allTags);
 }
 
-function tagListDisplay() {
+function listDisplay() {
   const resetAllfilters = document.querySelectorAll(".panel-body");
   resetAllfilters.forEach((data) => {
     data.innerHTML = "";
@@ -74,5 +74,5 @@ function tagListDisplay() {
   });
 }
 
-export { tagListDisplay };
-export { tagActivListener };
+export { listDisplay };
+export { tagDisplay };
