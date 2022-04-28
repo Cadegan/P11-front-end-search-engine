@@ -69,17 +69,28 @@ function searchInList(listArrayFocus, inputValue) {
   }
 }
 
+// Inputs secondaires
 function searchInListListener(event) {
   event.preventDefault();
   if (event.target.id === "ingredients-SearchInput") {
     const listArrayFocus = document.querySelectorAll("#ingredients-list li");
     const inputValue = document.querySelector("#ingredients-SearchInput").value.toLowerCase();
     searchInList(listArrayFocus, inputValue);
+  } else if (event.target.id === "appliance-SearchInput") {
+    const listArrayFocus = document.querySelectorAll("#appliance-list li");
+    const inputValue = document.querySelector("#appliance-SearchInput").value.toLowerCase();
+    searchInList(listArrayFocus, inputValue);
+  } else {
+    const listArrayFocus = document.querySelectorAll("#ustensils-list li");
+    const inputValue = document.querySelector("#ustensils-SearchInput").value.toLowerCase();
+    searchInList(listArrayFocus, inputValue);
   }
 }
 
 function inputSecondarySearch() {
   document.getElementById("ingredients-SearchInput").addEventListener("input", searchInListListener);
+  document.getElementById("appliance-SearchInput").addEventListener("input", searchInListListener);
+  document.getElementById("ustensils-SearchInput").addEventListener("input", searchInListListener);
 }
 
 export { functionSearch, inputSearchEvents, inputSecondarySearch };
