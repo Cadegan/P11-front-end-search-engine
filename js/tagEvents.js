@@ -3,7 +3,7 @@ import recipes from "../data/recipes.js";
 import ListTemplate from "../factories/templates/listTemplate.js";
 import { functionSearch } from "./searchBar.js";
 
-const tagTemplate = (tagLabel, tag) => {
+const generateTagTemplate = (tagLabel, tag) => {
   const closeTagLabel = document.createElement("img");
   closeTagLabel.setAttribute("alt", "close icon");
   closeTagLabel.setAttribute("src", "/img/close.svg");
@@ -36,13 +36,13 @@ function tagDisplay() {
     const tag = event.target.cloneNode(true);
     switch (li.closest("ul").id) {
       case "ingredients-list":
-        tagTemplate("ingredientsTag", tag);
+        generateTagTemplate("ingredientsTag", tag);
         break;
       case "appliance-list":
-        tagTemplate("applianceTag", tag);
+        generateTagTemplate("applianceTag", tag);
         break;
       case "ustensils-list":
-        tagTemplate("ustensilsTag", tag);
+        generateTagTemplate("ustensilsTag", tag);
         break;
         // no default
     }

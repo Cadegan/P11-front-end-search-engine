@@ -15,29 +15,30 @@ const functionSearch = () => {
       || recipe.appliance.toLowerCase().includes(tagSelected)
       || recipe.ustensils.some((ustensil) => ustensil.toLowerCase().includes(tagSelected)));
     updateRecipes(dataFiltredByTag);
-    console.log("dataFiltredByTag =", dataFiltredByTag);
+    // console.log("dataFiltredByTag =", dataFiltredByTag);
   });
 
   // Input search
-  if (mainInputSearch.lenght >= 3) {
+  if (mainInputSearch.length >= 3) {
     const dataFiltredByInput = [];
     // Pour chercher les ingredients il faut faire une double boucle :
     // parmi les recettes actives/taguée puis les ingredients disponibles
-    for (let i = 0; i < dataFiltredByTag.lenght; i += 1) {
-      const activRecipes = dataFiltredByTag[i];
-      let activIngredients = false;
-      for (let j = 0; j < activRecipes.ingredients.length; j += 1) {
-        if (activRecipes.ingredients[j].ingredient.toLowerCase().includes(mainInputSearch)) {
-          activIngredients = true;
+    for (let i = 0; i < dataFiltredByTag.length; i += 1) {
+      const activRecipe = dataFiltredByTag[i];
+      let recipeIsVisible = false;
+      for (let j = 0; j < activRecipe.ingredients.length; j += 1) {
+        if (activRecipe.ingredients[j].ingredient.toLowerCase().includes(mainInputSearch)) {
+          recipeIsVisible = true;
         }
       }
-      if (activRecipes.name.toLowerCase().includes(mainInputSearch)
-          || activRecipes.description.toLowerCase().includes(mainInputSearch)
-          || activIngredients) {
-        dataFiltredByInput.push(activRecipes);
+      if (activRecipe.name.toLowerCase().includes(mainInputSearch)
+          || activRecipe.description.toLowerCase().includes(mainInputSearch)
+          || recipeIsVisible) {
+        dataFiltredByInput.push(activRecipe);
       }
+      // console.log(recipeIsVisible);
     }
-    if (dataFiltredByTag.lenght === 0) {
+    if (dataFiltredByTag.length === 0) {
       document.querySelector(".listRecipesSection").textContent = "Aucune recette n'a été tourvée...";
     } else {
       updateRecipes(dataFiltredByInput);

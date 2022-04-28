@@ -243,6 +243,7 @@ button.collapsed {
 
 .closeTag {
   width: 20px;
+  pointer-events: none;
 }
 
 .item-hidden {
