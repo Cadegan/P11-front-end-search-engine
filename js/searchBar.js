@@ -1,7 +1,7 @@
 import recipes from "../data/recipes.js";
 import { updateRecipes } from "./index.js";
 
-function functionSearch() {
+const functionSearch = () => {
   let dataFiltredByTag = recipes;
   const mainInputSearch = document.getElementById("mainInputSearch").value.toLowerCase();
 
@@ -46,14 +46,40 @@ function functionSearch() {
   } else {
     updateRecipes(dataFiltredByTag);
   }
-}
+};
 
 function inputSearchEvents() {
-  const searchInput = document.querySelectorAll(".search-input");
-  searchInput.forEach((input) => {
-    input.addEventListener("input", functionSearch);
-  });
+  // const searchInput = document.querySelectorAll(".search-input");
+  // searchInput.forEach((input) => {
+  //   input.addEventListener("input", functionSearch);
+  // });
   document.getElementById("mainInputSearch").addEventListener("input", functionSearch);
 }
 
-export { functionSearch, inputSearchEvents };
+function searchInList(listArrayFocus, inputValue) {
+  for (let i = 0; i < listArrayFocus.length; i += 1) {
+    const itemFiltredArray = listArrayFocus[i];
+    // console.log(itemFiltredArray);
+    const itemFiltredArrayName = itemFiltredArray.textContent.toLowerCase();
+    if (!itemFiltredArrayName.includes(inputValue)) {
+      itemFiltredArray.classList.add("item-hidden");
+    } else {
+      itemFiltredArray.classList.remove("item-hidden");
+    }
+  }
+}
+
+function searchInListListener(event) {
+  event.preventDefault();
+  if (event.target.id === "ingredients-SearchInput") {
+    const listArrayFocus = document.querySelectorAll("#ingredients-list li");
+    const inputValue = document.querySelector("#ingredients-SearchInput").value.toLowerCase();
+    searchInList(listArrayFocus, inputValue);
+  }
+}
+
+function inputSecondarySearch() {
+  document.getElementById("ingredients-SearchInput").addEventListener("input", searchInListListener);
+}
+
+export { functionSearch, inputSearchEvents, inputSecondarySearch };

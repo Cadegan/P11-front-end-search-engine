@@ -245,6 +245,10 @@ button.collapsed {
   width: 20px;
 }
 
+.item-hidden {
+  display: none;
+}
+
 .listRecipesSection {
   margin-top: 24px;
   padding-left: 16px;
