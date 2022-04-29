@@ -38,7 +38,7 @@ const functionSearch = () => {
       }
       // console.log(recipeIsVisible);
     }
-    if (dataFiltredByTag.length === 0) {
+    if (dataFiltredByInput.length === 0) {
       document.querySelector(".listRecipesSection").textContent = "Aucune recette n'a été tourvée...";
     } else {
       updateRecipes(dataFiltredByInput);
@@ -47,6 +47,7 @@ const functionSearch = () => {
   } else {
     updateRecipes(dataFiltredByTag);
   }
+  console.log("dataFiltredByTag =", dataFiltredByTag);
 };
 
 function inputSearchEvents() {
