@@ -51,10 +51,10 @@ const functionSearch = () => {
 };
 
 function inputSearchEvents() {
-  // const searchInput = document.querySelectorAll(".search-input");
-  // searchInput.forEach((input) => {
-  //   input.addEventListener("input", functionSearch);
-  // });
+  const searchInput = document.querySelectorAll(".search-input");
+  searchInput.forEach((input) => {
+    input.addEventListener("input", functionSearch);
+  });
   document.getElementById("mainInputSearch").addEventListener("input", functionSearch);
 }
 

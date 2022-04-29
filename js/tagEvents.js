@@ -47,7 +47,7 @@ function tagDisplay() {
         // no default
     }
   }));
-  console.log(allTags);
+  // console.log(allTags);
 }
 
 function listDisplay() {
