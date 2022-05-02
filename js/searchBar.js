@@ -25,9 +25,11 @@ const functionSearch = () => {
     dataFiltred = dataFiltred.filter((recipes) =>
       recipes.name.toLowerCase().includes(mainInputSearch)
       || recipes.description.toLowerCase().includes(mainInputSearch)
-      || recipes.ingredients.some((e) => e.ingredient.toLowerCase()));
-  } if (dataFiltred.length === 0) {
-    document.querySelector(".listRecipesSection").textContent = "Aucune recette n'a été tourvée...";
+      || recipes.ingredients.some((e) => e.ingredient.toLowerCase().includes(mainInputSearch)));
+
+    if (dataFiltred.length === 0) {
+      document.querySelector(".listRecipesSection").textContent = "Aucune recette n'a été tourvée...";
+    }
   } else {
     updateRecipes(dataFiltred);
   }
