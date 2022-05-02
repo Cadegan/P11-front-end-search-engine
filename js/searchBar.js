@@ -22,10 +22,10 @@ const functionSearch = () => {
 
   // Input search principal
   if (mainInputSearch.length >= 3) {
-    dataFiltred = dataFiltred.filter((recipes) =>
-      recipes.name.toLowerCase().includes(mainInputSearch)
-      || recipes.description.toLowerCase().includes(mainInputSearch)
-      || recipes.ingredients.some((e) => e.ingredient.toLowerCase().includes(mainInputSearch)));
+    dataFiltred = dataFiltred.filter((recipe) =>
+      recipe.name.toLowerCase().includes(mainInputSearch)
+      || recipe.description.toLowerCase().includes(mainInputSearch)
+      || recipe.ingredients.some((e) => e.ingredient.toLowerCase().includes(mainInputSearch)));
 
     if (dataFiltred.length === 0) {
       document.querySelector(".listRecipesSection").textContent = "Aucune recette n'a été tourvée...";
@@ -33,6 +33,7 @@ const functionSearch = () => {
   } else {
     updateRecipes(dataFiltred);
   }
+  updateRecipes(dataFiltred);
   console.log("dataFiltred =", dataFiltred);
 };
 
