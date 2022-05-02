@@ -1,5 +1,6 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable import/extensions */
-import recipes from "../data/recipes.js";
+// import recipes from "../data/recipes.js";
 import ListTemplate from "../factories/templates/listTemplate.js";
 import { functionSearch } from "./searchBar.js";
 
@@ -50,7 +51,7 @@ function tagDisplay() {
   // console.log(allTags);
 }
 
-function listDisplay() {
+function listDisplay(dataFiltred) {
   const resetAllfilters = document.querySelectorAll(".panel-body");
   resetAllfilters.forEach((data) => {
     data.innerHTML = "";
@@ -63,14 +64,14 @@ function listDisplay() {
   const applianceList = [];
   const ustensilsList = [];
 
-  recipes.forEach((recipes) => {
-    const ingredientsFilterShow = new ListTemplate(recipes, ingredientFilter, ingredientsList);
+  dataFiltred.forEach((data) => {
+    const ingredientsFilterShow = new ListTemplate(data, ingredientFilter, ingredientsList);
     ingredientsFilterShow.ingredientsList();
 
-    const applianceListFilterShow = new ListTemplate(recipes, applianceFilter, applianceList);
+    const applianceListFilterShow = new ListTemplate(data, applianceFilter, applianceList);
     applianceListFilterShow.applianceList();
 
-    const ustensilsListFilterShow = new ListTemplate(recipes, ustensilsFilter, ustensilsList);
+    const ustensilsListFilterShow = new ListTemplate(data, ustensilsFilter, ustensilsList);
     ustensilsListFilterShow.ustensilsList();
   });
 }

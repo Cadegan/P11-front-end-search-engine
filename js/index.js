@@ -20,4 +20,4 @@ function init() {
 
 init();
 
-export { updateRecipes };
+export default updateRecipes;

@@ -1,5 +1,10 @@
+/* eslint-disable no-console */
+/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable import/no-cycle */
+/* eslint-disable import/extensions */
 import recipes from "../data/recipes.js";
-import { updateRecipes } from "./index.js";
+import updateRecipes from "./index.js";
+// import { listDisplay } from "./tagEvents.js";
 
 const functionSearch = () => {
   let dataFiltredByTag = recipes;
@@ -14,11 +19,11 @@ const functionSearch = () => {
       recipe.ingredients.some((e) => e.ingredient.toLowerCase().includes(tagSelected))
       || recipe.appliance.toLowerCase().includes(tagSelected)
       || recipe.ustensils.some((ustensil) => ustensil.toLowerCase().includes(tagSelected)));
-    updateRecipes(dataFiltredByTag);
+    // updateRecipes(dataFiltredByTag);
     // console.log("dataFiltredByTag =", dataFiltredByTag);
   });
 
-  // Input search
+  // Input search principal
   if (mainInputSearch.length >= 3) {
     const dataFiltredByInput = [];
     // Pour chercher les ingredients il faut faire une double boucle :
@@ -42,22 +47,17 @@ const functionSearch = () => {
       document.querySelector(".listRecipesSection").textContent = "Aucune recette n'a été tourvée...";
     } else {
       updateRecipes(dataFiltredByInput);
+      // listDisplay(dataFiltredByInput);
     }
     console.log("dataFiltredByInput =", dataFiltredByInput);
   } else {
     updateRecipes(dataFiltredByTag);
+    // listDisplay(dataFiltredByTag);
   }
   console.log("dataFiltredByTag =", dataFiltredByTag);
 };
 
-function inputSearchEvents() {
-  const searchInput = document.querySelectorAll(".search-input");
-  searchInput.forEach((input) => {
-    input.addEventListener("input", functionSearch);
-  });
-  document.getElementById("mainInputSearch").addEventListener("input", functionSearch);
-}
-
+// Inputs secondaires
 function searchInList(listArrayFocus, inputValue) {
   for (let i = 0; i < listArrayFocus.length; i += 1) {
     const itemFiltredArray = listArrayFocus[i];
@@ -71,7 +71,6 @@ function searchInList(listArrayFocus, inputValue) {
   }
 }
 
-// Inputs secondaires
 function searchInListListener(event) {
   event.preventDefault();
   if (event.target.id === "ingredients-SearchInput") {
@@ -89,6 +88,17 @@ function searchInListListener(event) {
   }
 }
 
+// Ecoute des évènement
+// Dans le cas d'une recherche via l'input principal
+function inputSearchEvents() {
+  // const searchInput = document.querySelectorAll(".search-input");
+  // searchInput.forEach((input) => {
+  //   input.addEventListener("input", functionSearch);
+  // });
+  document.getElementById("mainInputSearch").addEventListener("input", functionSearch);
+}
+
+// Dans le cas d'une recherche via les inputs secondaires
 function inputSecondarySearch() {
   document.getElementById("ingredients-SearchInput").addEventListener("input", searchInListListener);
   document.getElementById("appliance-SearchInput").addEventListener("input", searchInListListener);

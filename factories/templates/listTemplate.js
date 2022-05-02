@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 export default class ListTemplate {
   constructor(recipe, container, arrayWithoutDuplicate) {
     this.recipe = recipe;
