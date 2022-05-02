@@ -6,13 +6,13 @@ import recipes from "../data/recipes.js";
 import updateRecipes from "./index.js";
 
 const functionSearch = () => {
-  let dataFiltred = recipes;
+  let dataFiltredByTag = recipes;
   const mainInputSearch = document.getElementById("mainInputSearch").value.toLowerCase();
 
   // TagSelected
   document.querySelectorAll("#tagSection li").forEach((tag) => {
     const tagSelected = tag.textContent.toLowerCase();
-    dataFiltred = dataFiltred.filter((recipe) =>
+    dataFiltredByTag = dataFiltredByTag.filter((recipe) =>
       // filter() retourne un nouveau tableau si le callback some(e) retourne "true"
       // cad si un element dans "recipes" correspond au "tagSelected"
       recipe.ingredients.some((e) => e.ingredient.toLowerCase().includes(tagSelected))
@@ -22,16 +22,36 @@ const functionSearch = () => {
 
   // Input search principal
   if (mainInputSearch.length >= 3) {
-    dataFiltred = dataFiltred.filter((recipes) =>
-      recipes.name.toLowerCase().includes(mainInputSearch)
-      || recipes.description.toLowerCase().includes(mainInputSearch)
-      || recipes.ingredients.some((e) => e.ingredient.toLowerCase()));
-  } if (dataFiltred.length === 0) {
-    document.querySelector(".listRecipesSection").textContent = "Aucune recette n'a été tourvée...";
+    const dataFiltredByInput = [];
+    // Pour chercher les ingredients il faut faire une double boucle :
+    // parmi les recettes actives/taguée puis les ingredients disponibles
+    for (let i = 0; i < dataFiltredByTag.length; i += 1) {
+      const activRecipe = dataFiltredByTag[i];
+      let recipeIsVisible = false;
+      for (let j = 0; j < activRecipe.ingredients.length; j += 1) {
+        if (activRecipe.ingredients[j].ingredient.toLowerCase().includes(mainInputSearch)) {
+          recipeIsVisible = true;
+        }
+      }
+      if (activRecipe.name.toLowerCase().includes(mainInputSearch)
+          || activRecipe.description.toLowerCase().includes(mainInputSearch)
+          || recipeIsVisible) {
+        dataFiltredByInput.push(activRecipe);
+      }
+      // console.log(recipeIsVisible);
+    }
+    if (dataFiltredByInput.length === 0) {
+      document.querySelector(".listRecipesSection").textContent = "Aucune recette n'a été tourvée...";
+    } else {
+      updateRecipes(dataFiltredByInput);
+      // listDisplay(dataFiltredByInput);
+    }
+    console.log("dataFiltredByInput =", dataFiltredByInput);
   } else {
-    updateRecipes(dataFiltred);
+    updateRecipes(dataFiltredByTag);
+    // listDisplay(dataFiltredByTag);
   }
-  console.log("dataFiltred =", dataFiltred);
+  console.log("dataFiltredByTag =", dataFiltredByTag);
 };
 
 // Inputs secondaires
