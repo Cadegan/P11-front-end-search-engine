@@ -12,10 +12,6 @@ const generateTagTemplate = (tagLabel, tag) => {
 
   tag.classList.add(tagLabel);
   tag.appendChild(closeTagLabel);
-  // tag.setAttribute("onclick", "closeTag(this)");
-  // function closeTag(tagFocus) {
-  //   tagFocus.parentElement.removeChild();
-  // }
 
   tag.addEventListener("click", (event) => {
     event.target.parentElement.removeChild(event.target);
@@ -25,10 +21,6 @@ const generateTagTemplate = (tagLabel, tag) => {
   document.getElementById("tagSection").appendChild(tag);
   functionSearch();
 };
-
-// function closeTag(closeTagClic) {
-//   closeTagClic.parentNode.removeChild();
-// }
 
 // Clonage/création du tag quand il est selectionné
 function tagDisplay() {

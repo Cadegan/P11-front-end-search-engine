@@ -330,4 +330,8 @@ button.collapsed {
   -webkit-line-clamp: 10;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.warningMessage {
+  margin-left: 16px;
 }/*# sourceMappingURL=main.css.map */

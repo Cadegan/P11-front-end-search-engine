@@ -4,7 +4,6 @@
 /* eslint-disable import/extensions */
 import recipes from "../data/recipes.js";
 import updateRecipes from "./index.js";
-// import { listDisplay } from "./tagEvents.js";
 
 const functionSearch = () => {
   let dataFiltredByTag = recipes;
@@ -19,7 +18,6 @@ const functionSearch = () => {
       recipe.ingredients.some((e) => e.ingredient.toLowerCase().includes(tagSelected))
       || recipe.appliance.toLowerCase().includes(tagSelected)
       || recipe.ustensils.some((ustensil) => ustensil.toLowerCase().includes(tagSelected)));
-    // updateRecipes(dataFiltredByTag);
     // console.log("dataFiltredByTag =", dataFiltredByTag);
   });
 
@@ -29,32 +27,33 @@ const functionSearch = () => {
     // Pour chercher les ingredients il faut faire une double boucle :
     // parmi les recettes actives/taguée puis les ingredients disponibles
     for (let i = 0; i < dataFiltredByTag.length; i += 1) {
-      const activRecipe = dataFiltredByTag[i];
-      let recipeIsVisible = false;
-      for (let j = 0; j < activRecipe.ingredients.length; j += 1) {
-        if (activRecipe.ingredients[j].ingredient.toLowerCase().includes(mainInputSearch)) {
-          recipeIsVisible = true;
+      const activeRecipesByTag = dataFiltredByTag[i];
+      let IngredientIsVisible = false;
+      for (let j = 0; j < activeRecipesByTag.ingredients.length; j += 1) {
+        if (activeRecipesByTag.ingredients[j].ingredient.toLowerCase().includes(mainInputSearch)) {
+          IngredientIsVisible = true;
         }
       }
-      if (activRecipe.name.toLowerCase().includes(mainInputSearch)
-          || activRecipe.description.toLowerCase().includes(mainInputSearch)
-          || recipeIsVisible) {
-        dataFiltredByInput.push(activRecipe);
+      if (activeRecipesByTag.name.toLowerCase().includes(mainInputSearch)
+          || activeRecipesByTag.description.toLowerCase().includes(mainInputSearch)
+          || IngredientIsVisible) {
+        dataFiltredByInput.push(activeRecipesByTag);
       }
-      // console.log(recipeIsVisible);
+      // console.log("IngredientIsVisible", IngredientIsVisible);
     }
     if (dataFiltredByInput.length === 0) {
-      document.querySelector(".listRecipesSection").textContent = "Aucune recette n'a été tourvée...";
+      document.querySelector("#noRecipeMessage").textContent = "Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc.";
+      document.querySelector(".listRecipesSection").textContent = "";
     } else {
       updateRecipes(dataFiltredByInput);
-      // listDisplay(dataFiltredByInput);
+      document.querySelector("#noRecipeMessage").textContent = "";
     }
-    console.log("dataFiltredByInput =", dataFiltredByInput);
+    // console.log("dataFiltredByInput =", dataFiltredByInput);
   } else {
     updateRecipes(dataFiltredByTag);
-    // listDisplay(dataFiltredByTag);
+    document.querySelector("#noRecipeMessage").textContent = "";
   }
-  console.log("dataFiltredByTag =", dataFiltredByTag);
+  // console.log("dataFiltredByTag =", dataFiltredByTag);
 };
 
 // Inputs secondaires
@@ -91,10 +90,6 @@ function searchInListListener(event) {
 // Ecoute des évènement
 // Dans le cas d'une recherche via l'input principal
 function inputSearchEvents() {
-  // const searchInput = document.querySelectorAll(".search-input");
-  // searchInput.forEach((input) => {
-  //   input.addEventListener("input", functionSearch);
-  // });
   document.getElementById("mainInputSearch").addEventListener("input", functionSearch);
 }
 
