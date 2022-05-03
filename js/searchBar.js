@@ -26,14 +26,17 @@ const functionSearch = () => {
       recipe.name.toLowerCase().includes(mainInputSearch)
       || recipe.description.toLowerCase().includes(mainInputSearch)
       || recipe.ingredients.some((e) => e.ingredient.toLowerCase().includes(mainInputSearch)));
-
-    if (dataFiltred.length === 0) {
-      document.querySelector(".listRecipesSection").textContent = "Aucune recette n'a été tourvée...";
-    }
-  } else {
-    updateRecipes(dataFiltred);
   }
+  // else {
+  //   updateRecipes(dataFiltred);
+  // }
   updateRecipes(dataFiltred);
+
+  if (dataFiltred.length === 0) {
+    document.querySelector("#noRecipeMessage").textContent = "Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc.";
+  } else {
+    document.querySelector("#noRecipeMessage").textContent = "";
+  }
   console.log("dataFiltred =", dataFiltred);
 };
 
