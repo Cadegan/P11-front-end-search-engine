@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const functionSearch = (filter) => {
   const dataFiltredByInput = [];
   for (let i = 0; i < recipes.length; i += 1) {
@@ -9,11 +10,11 @@ const functionSearch = (filter) => {
       }
     }
     if (activeRecipesByTag.name.toLowerCase().includes(filter)
-            || activeRecipesByTag.description.toLowerCase().includes(filter)
-            || IngredientIsVisible) {
+      || activeRecipesByTag.description.toLowerCase().includes(filter)
+      || IngredientIsVisible) {
       dataFiltredByInput.push(activeRecipesByTag);
     }
   }
 };
 
-functionSearch("chocolat");
+functionSearch("cou");
