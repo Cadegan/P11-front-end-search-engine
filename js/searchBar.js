@@ -18,6 +18,7 @@ const functionSearch = () => {
       recipe.ingredients.some((e) => e.ingredient.toLowerCase().includes(tagSelected))
       || recipe.appliance.toLowerCase().includes(tagSelected)
       || recipe.ustensils.some((ustensil) => ustensil.toLowerCase().includes(tagSelected)));
+    // console.log("dataFiltredByTag", dataFiltred);
   });
 
   // Input search principal
@@ -27,33 +28,32 @@ const functionSearch = () => {
       || recipe.description.toLowerCase().includes(mainInputSearch)
       || recipe.ingredients.some((e) => e.ingredient.toLowerCase().includes(mainInputSearch)));
   }
-  // else {
-  //   updateRecipes(dataFiltred);
-  // }
+
   updateRecipes(dataFiltred);
+  // console.log("dataFiltredByinput", dataFiltred);
 
   if (dataFiltred.length === 0) {
     document.querySelector("#noRecipeMessage").textContent = "Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc.";
   } else {
     document.querySelector("#noRecipeMessage").textContent = "";
   }
-  console.log("dataFiltred =", dataFiltred);
 };
 
 // Inputs secondaires
 function searchInList(listArrayFocus, inputValue) {
   for (let i = 0; i < listArrayFocus.length; i += 1) {
-    const itemFiltredArray = listArrayFocus[i];
-    // console.log(itemFiltredArray);
-    const itemFiltredArrayName = itemFiltredArray.textContent.toLowerCase();
-    if (!itemFiltredArrayName.includes(inputValue)) {
-      itemFiltredArray.classList.add("item-hidden");
+    const itemToHide = listArrayFocus[i];
+    // console.log(itemToHide);
+    const itemToHideName = itemToHide.textContent.toLowerCase();
+    if (!itemToHideName.includes(inputValue)) {
+      itemToHide.classList.add("item-hidden");
     } else {
-      itemFiltredArray.classList.remove("item-hidden");
+      itemToHide.classList.remove("item-hidden");
     }
   }
 }
 
+// Cache ou affiche les éléments des listes en fonction des entrées secondaires
 function searchInListListener(event) {
   event.preventDefault();
   if (event.target.id === "ingredients-SearchInput") {

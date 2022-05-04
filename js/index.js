@@ -13,7 +13,6 @@ const updateRecipes = (data) => {
 
 function init() {
   updateRecipes(recipes);
-  // functionSearch();
   inputSearchEvents();
   inputSecondarySearch();
 }
