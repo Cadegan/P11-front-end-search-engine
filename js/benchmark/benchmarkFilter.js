@@ -1,4 +1,7 @@
-const functionSearch = (filter) => {
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-expressions */
+// Benchmark for
+const functionSearchFor = (filter) => {
   const dataFiltredByInput = [];
   for (let i = 0; i < recipes.length; i += 1) {
     const activeRecipesByTag = recipes[i];
@@ -16,20 +19,33 @@ const functionSearch = (filter) => {
   }
 };
 
-functionSearch("cou");
+functionSearchFor("cou");
 
-//
-
-let functionSearch = (filter) => {
+// Benchmark filter
+const functionSearchFilter = (filter) => {
   let dataFiltred = recipes;
 
-    dataFiltred = dataFiltred.filter((recipe) => {
-      recipe.name.toLowerCase().includes(filter)
+  dataFiltred = dataFiltred.filter((recipe) => {
+    recipe.name.toLowerCase().includes(filter)
       || recipe.description.toLowerCase().includes(filter)
-      || recipe.ingredients.some((e) => e.ingredient.toLowerCase().includes(filter))
-    });
+      || recipe.ingredients.some((e) => e.ingredient.toLowerCase().includes(filter));
+  });
 
-  // return dataFiltred;
+  return dataFiltred;
 };
 
-functionSearch("cou");
+functionSearchFilter("cou");
+
+// const functionSearchFilter = (filter) => {
+//   const dataFiltred = recipes.filter((recipe) => {
+//     const allIngredients = recipe.ingredients.map((ing) => ing.ingredient).join();
+
+//     return recipe.name.toLowerCase().includes(filter)
+//     || recipe.description.toLowerCase().indexOf(filter)
+//     || allIngredients.toLowerCase().indexOf(filter);
+//   });
+
+//   return dataFiltred;
+// };
+
+// functionSearchFilter("cou");
