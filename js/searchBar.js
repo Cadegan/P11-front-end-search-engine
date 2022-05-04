@@ -59,17 +59,18 @@ const functionSearch = () => {
 // Inputs secondaires
 function searchInList(listArrayFocus, inputValue) {
   for (let i = 0; i < listArrayFocus.length; i += 1) {
-    const itemFiltredArray = listArrayFocus[i];
-    // console.log(itemFiltredArray);
-    const itemFiltredArrayName = itemFiltredArray.textContent.toLowerCase();
-    if (!itemFiltredArrayName.includes(inputValue)) {
-      itemFiltredArray.classList.add("item-hidden");
+    const itemToHide = listArrayFocus[i];
+    // console.log(itemToHide);
+    const itemToHideName = itemToHide.textContent.toLowerCase();
+    if (!itemToHideName.includes(inputValue)) {
+      itemToHide.classList.add("item-hidden");
     } else {
-      itemFiltredArray.classList.remove("item-hidden");
+      itemToHide.classList.remove("item-hidden");
     }
   }
 }
 
+// Cache ou affiche les éléments des listes en fonction des entrées secondaires
 function searchInListListener(event) {
   event.preventDefault();
   if (event.target.id === "ingredients-SearchInput") {
