@@ -1,6 +1,6 @@
 export default class RecipeCardTemplate {
-  constructor(recipe) {
-    this.recipes = recipe;
+  constructor(recipes) {
+    this.recipes = recipes;
     this.container = document.querySelector(".listRecipesSection");
     this.showRecipe();
   }

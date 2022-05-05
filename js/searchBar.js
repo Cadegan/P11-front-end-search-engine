@@ -18,7 +18,6 @@ const functionSearch = () => {
       recipe.ingredients.some((e) => e.ingredient.toLowerCase().includes(tagSelected))
       || recipe.appliance.toLowerCase().includes(tagSelected)
       || recipe.ustensils.some((ustensil) => ustensil.toLowerCase().includes(tagSelected)));
-    // console.log("dataFiltredByTag", dataFiltred);
   });
 
   // Input search principal
@@ -30,7 +29,6 @@ const functionSearch = () => {
   }
 
   updateRecipes(dataFiltred);
-  // console.log("dataFiltredByinput", dataFiltred);
 
   if (dataFiltred.length === 0) {
     document.querySelector("#noRecipeMessage").textContent = "Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc.";
@@ -43,7 +41,6 @@ const functionSearch = () => {
 function searchInList(listArrayFocus, inputValue) {
   for (let i = 0; i < listArrayFocus.length; i += 1) {
     const itemToHide = listArrayFocus[i];
-    // console.log(itemToHide);
     const itemToHideName = itemToHide.textContent.toLowerCase();
     if (!itemToHideName.includes(inputValue)) {
       itemToHide.classList.add("item-hidden");
