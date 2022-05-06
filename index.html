@@ -2,8 +2,7 @@
 <html lang="fr">
 
 <head>
-  <link rel="icon" type="image/ico" href="img/favicon.ico">
-  </link>
+  <link rel="icon" type="image/ico" href="img/favicon.ico"/>
   <title>Les Petits Plats</title>
   <meta name="description" content="Les Petits Plats">
   <!-- Required meta tags -->
@@ -26,54 +25,54 @@
   <nav class="mainNavbar">
     <div class="container-fluid">
       <form class="d-flex">
-        <input id="mainInputSearch" class="form-control search-input" placeholder="Rechercher une recette"></input>
+        <input id="mainInputSearch" class="form-control search-input" placeholder="Rechercher une recette"/>
       </form>
     </div>
     <img src="img/magnifying-glass.svg" alt="Magnifying glass icon">
   </nav>
-  <section id="tagSection" class="row">
-  </section>
+  <div id="tagSection" class="row">
+  </div>
 
-  <section class="filterSection">
+  <div class="filterSection">
     <div class="container containerFilter">
       <div class="panel-group" id="accordion">
 
         <div class="filterIngredient">
           <div class="btFilterIngredient btn btn-lg panel-title">
-            <input class="form-control search-input" id="ingredients-SearchInput" placeholder="Ingrédients" data-toggle="collapse" data-parent="#accordion" href="#collapse1"></input>
-            <button type="button" class="collapsed btnFleche" data-toggle="collapse" data-parent="#accordion" href="#collapse1"></button>
+            <input class="form-control search-input" id="ingredients-SearchInput" placeholder="Ingrédients" data-toggle="collapse" data-parent="#accordion" href="#collapse1"/>
+            <a class="collapsed btnFleche" data-toggle="collapse" data-parent="#accordion" href="#collapse1"></a>
           </div>
           <div id="collapse1" class="panel-collapse collapse">
-            <ul class="panel-body" id="ingredients-list">Erreur de chargement des ingrédients.</ul>
+            <ul class="panel-body" id="ingredients-list"></ul>
           </div>
         </div>
 
         <div class="filterAppareils">
           <div class="btFilterAppareils btn btn-lg panel-title">
-            <input class="form-control search-input" id="appliance-SearchInput" placeholder="Appareils" data-toggle="collapse" data-parent="#accordion" href="#collapse2"></input>
-            <button type="button" class="collapsed btnFleche" data-toggle="collapse" data-parent="#accordion" href="#collapse2"></button>
+            <input class="form-control search-input" id="appliance-SearchInput" placeholder="Appareils" data-toggle="collapse" data-parent="#accordion" href="#collapse2"/>
+            <a class="collapsed btnFleche" data-toggle="collapse" data-parent="#accordion" href="#collapse2"></a>
           </div>
           <div id="collapse2" class="panel-collapse collapse">
-            <ul class="panel-body" id="appliance-list">Erreur de chargement des appareils.</ul>
+            <ul class="panel-body" id="appliance-list"></ul>
           </div>
         </div>
 
         <div class="filterUstensiles">
           <div class="btnFilterUstensiles btn btn-lg panel-title">
-            <input class="form-control search-input" id="ustensils-SearchInput" placeholder="Ustensiles" data-toggle="collapse" data-parent="#accordion" href="#collapse3"></input>
-            <button type="button" class="collapsed btnFleche" data-toggle="collapse" data-parent="#accordion" href="#collapse3"></button>
+            <input class="form-control search-input" id="ustensils-SearchInput" placeholder="Ustensiles" data-toggle="collapse" data-parent="#accordion" href="#collapse3"/>
+            <a class="collapsed btnFleche" data-toggle="collapse" data-parent="#accordion" href="#collapse3"></a>
           </div>
           <div id="collapse3" class="panel-collapse collapse">
-            <ul class="panel-body" id="ustensils-list">Erreur de chargement des ustensiles.</ul>
+            <ul class="panel-body" id="ustensils-list"></ul>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <section class="listRecipesSection row"></section>
-  <section class="warningMessage">
+  </div>
+  <div class="listRecipesSection row"></div>
+  <div class="warningMessage">
     <p id="noRecipeMessage"></p>
-  </section>
+  </div>
   <script src="./js/index.js" type="module" ></script>
 
 </body>
