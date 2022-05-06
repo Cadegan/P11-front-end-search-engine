@@ -35,17 +35,3 @@ const functionSearchFilter = (filter) => {
 };
 
 functionSearchFilter("cou");
-
-// const functionSearchFilter = (filter) => {
-//   const dataFiltred = recipes.filter((recipe) => {
-//     const allIngredients = recipe.ingredients.map((ing) => ing.ingredient).join();
-
-//     return recipe.name.toLowerCase().includes(filter)
-//     || recipe.description.toLowerCase().indexOf(filter)
-//     || allIngredients.toLowerCase().indexOf(filter);
-//   });
-
-//   return dataFiltred;
-// };
-
-// functionSearchFilter("cou");
