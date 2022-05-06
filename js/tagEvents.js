@@ -39,7 +39,6 @@ function tagDisplay() {
         // no default
     }
   }));
-  // console.log(allTags);
 }
 
 function listDisplay(dataFiltred) {
