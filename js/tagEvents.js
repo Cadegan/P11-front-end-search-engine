@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable no-param-reassign */
 /* eslint-disable import/extensions */
 import ListTemplate from "../factories/templates/listTemplate.js";
@@ -46,23 +47,23 @@ function listDisplay(dataFiltred) {
   resetAllfilters.forEach((data) => {
     data.innerHTML = "";
   });
-  const ingredientFilter = document.querySelector("#ingredients-list");
-  const applianceFilter = document.querySelector("#appliance-list");
-  const ustensilsFilter = document.querySelector("#ustensils-list");
+  const ingredientContainer = document.querySelector("#ingredients-list");
+  const applianceContainer = document.querySelector("#appliance-list");
+  const ustensilsContainer = document.querySelector("#ustensils-list");
 
-  const ingredientsList = [];
-  const applianceList = [];
-  const ustensilsList = [];
+  const ingredientsArray = [];
+  const applianceArray = [];
+  const ustensilsArray = [];
 
   dataFiltred.forEach((data) => {
-    const ingredientsFilterShow = new ListTemplate(data, ingredientFilter, ingredientsList);
+    const ingredientsFilterShow = new ListTemplate(data, ingredientContainer, ingredientsArray);
     ingredientsFilterShow.ingredientsList();
 
-    const applianceListFilterShow = new ListTemplate(data, applianceFilter, applianceList);
-    applianceListFilterShow.applianceList();
+    const appliancesFilterShow = new ListTemplate(data, applianceContainer, applianceArray);
+    appliancesFilterShow.applianceList();
 
-    const ustensilsListFilterShow = new ListTemplate(data, ustensilsFilter, ustensilsList);
-    ustensilsListFilterShow.ustensilsList();
+    const ustensilsFilterShow = new ListTemplate(data, ustensilsContainer, ustensilsArray);
+    ustensilsFilterShow.ustensilsList();
   });
 }
 
