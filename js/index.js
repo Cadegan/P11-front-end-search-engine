@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable import/extensions */
 import recipes from "../data/recipes.js";
 import { inputSearchEvents, inputSecondarySearch } from "./searchBar.js";
