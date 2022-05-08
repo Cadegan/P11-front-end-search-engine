@@ -80,7 +80,7 @@ form {
     align-items: center;
 }
 
-.btn-lg>button {
+.btn-lg>a {
     content: '';
     margin-right: 12px;
     width: 10px;
@@ -92,7 +92,7 @@ form {
     transition: transform 200ms ease-in;
 }
 
-button.collapsed {
+a.collapsed {
     transform: rotate(225deg);
 }
 
